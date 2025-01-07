@@ -461,7 +461,7 @@ footer{
     .conteudo_home_tittle{
         font-family: "Epilogue";
         font-weight: 600;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         color: rgba(37, 38, 48, 1);
         margin-top: -1%;
         width: 100%;
@@ -469,14 +469,14 @@ footer{
     }
     .conteudo_home_subtittle{
         font-family: "Space Grotesk";
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         color: rgba(37, 38, 48, 0.6);
         margin-top: -1%;
     }
     .conteudo_home_linkMail{
         font-family: "Space Grotesk";
         font-weight: 500;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         color: rgba(37, 38, 48, 1);
     }
     .conteudo_home_btn{
@@ -492,7 +492,7 @@ footer{
         width: 370px;
         background-color: rgba(41, 88, 255, 1);
         margin-top: 3%;
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
     .conteudo_home_btn img{
         display: none;
@@ -513,7 +513,7 @@ footer{
     .projetos_title{
         font-family: "Epilogue";
         font-weight: 600;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         color: #FFF;
         margin-left: 3%;
         margin-top: 5%;
@@ -546,12 +546,12 @@ footer{
         font-family: "Epilogue";
         font-weight: 500;
         color: #FFF;
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     .texto_card_conteudo_projetos{
         font-family: "Epilogue";
         font-weight: 400;
-        font-size: 0.8rem;
+        font-size: 0.7rem;
         color: #FFF;
         margin-top: -1%;
     }
@@ -569,7 +569,7 @@ footer{
     .links_projetos{
         font-family: "Epilogue";
         font-weight: 500;
-        font-size: 1rem;
+        font-size: 0.9rem;
         color: #FFF;
         margin-left: 3%;
         margin-top: 3%;
@@ -612,12 +612,12 @@ footer{
         justify-content: center;
     }
     .projetos_title{
-        font-size: 1.6rem;
+        font-size: 1.4rem;
     }
     .aboutme_textos p{
         font-family: "Space Grotesk";
         font-weight: 400;
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: #FFF;
         width: 100%;
         word-wrap: break-word;
@@ -633,7 +633,7 @@ footer{
     .footer_title{
         font-family: "Epilogue";
         font-weight: 700;
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         color: #FFF;
         margin-left: 3%;
         margin-top: 3%;
@@ -642,7 +642,7 @@ footer{
         font-family: "Epilogue";
         font-weight: 300;
         color: rgba(226, 226, 226, 0.65);
-        font-size:  1rem;
+        font-size:  0.9rem;
         margin-left: 3%;
         margin-top: 1%;
     }
@@ -650,7 +650,7 @@ footer{
         font-family: "Epilogue";
         font-weight: 300;
         color: #fff;
-        font-size: 1rem;
+        font-size: 0.9rem;
         margin-left: 3%;
         margin-top: 5%;
     }
@@ -667,7 +667,7 @@ footer{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 45px;
+        width: 50px;
         height: 45px;
         background-color: #FFC226;
         border-radius: 50px;
@@ -694,7 +694,7 @@ footer{
         font-family: "Epilogue";
         font-weight: 300;
         color: rgba(226, 226, 226, 0.65);
-        font-size: 1rem;
+        font-size: 0.9rem;
         margin-left: 3%;
         margin-top: 20%;
     }
