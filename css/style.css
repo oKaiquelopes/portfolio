@@ -489,7 +489,7 @@ footer{
         align-items: center;
         justify-content: center;
         height: 45px;
-        width: 250px;
+        width: 380px;
         background-color: rgba(41, 88, 255, 1);
         margin-top: 3%;
         font-size: 0.9rem;
@@ -501,7 +501,7 @@ footer{
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 80vh;
+        height: 70vh;
     }   
     #projetos{
         display: flex;
@@ -581,7 +581,7 @@ footer{
     #aboutme{
         background-color: #000;
         width: 100%;
-        height: 130vh;
+        height: 170vh;
         display: flex;
         flex-direction: column;
     }
@@ -628,7 +628,7 @@ footer{
         flex-direction: column;
         background-color: #000;
         width: 100%;
-        height: 85vh;
+        height: 65vh;
     }
     .footer_title{
         font-family: "Epilogue";
