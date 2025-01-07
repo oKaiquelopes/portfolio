@@ -1,0 +1,14 @@
+{
+    "pt": {
+        "cabecalho_id": "projetos",
+        "title": "Bem-vindo ao Meu Site",
+        "description": "Este é um site de exemplo para tradução.",
+        "button": "Clique aqui"
+    },
+    "en": {
+        "cabecalho_id": "projects",
+        "title": "Welcome to My Website",
+        "description": "This is a sample site for translation.",
+        "button": "Click here"
+    }
+}

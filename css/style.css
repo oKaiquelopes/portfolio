@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+*{
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #FFF;
+}
+#home{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+.cabecalho{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    max-height: auto;
+    padding: 15px 45px;
+}
+.divisao_header{
+    display: flex;
+    flex-direction: column;
+    width: 2px;
+    height: 30px;
+    margin: 1%;
+    background-color: rgba(226, 226, 226, 0.5);
+}
+.logo_header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: auto;
+    height: 50px;
+}
+.logo_header img{
+    height: 50px;
+}
+.nav_links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-height: auto;
+    width: 20%;
+    gap: 15px;
+    margin-left: 25%;
+}
+.nav_links a{
+    font-family: "Epilogue";
+    font-size: 1rem;
+    font-weight: 500;
+    color: #363636;
+    text-decoration: none;
+}
+.nav_links a:hover{
+    color: #FF3F00;
+    transition: all 0.3s ease-out;
+}
+.btn_translator{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-height: auto;
+    width: 100px;
+    padding: 15px 15px;
+    border-radius: 30px;
+    background-color: rgba(135, 161, 253, 0.35);
+    gap: 5px;
+    margin-left: 1%;
+}
+.btn_translator_img{
+    height: 20px;
+}
+.btn_translator_a{
+    font-family: "Epilogue";
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: #2958FF;
+    text-decoration: none;
+}
+.btns_links_header{
+    display: flex;
+    flex-direction: row;
+    max-height: auto;
+    width: 15%;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-left: 1%;
+}
+.btns_links_header_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(135, 161, 253, 0.35);
+    border-radius: 50px;
+    gap: 15px 15px;
+}
+.btns_links_header_btn a img{
+    height: 25px;
+}
+#home{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+.conteudo_home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: auto;
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 3%;
+}
+.conteudo_home_saudacao{
+    font-family: "Space Grotesk";
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(36, 37, 44, 0.4784);
+}
+.conteudo_home_tittle{
+    font-family: "Epilogue";
+    font-weight: 600;
+    font-size: 2.3rem;
+    color: rgba(37, 38, 48, 1);
+    margin-top: -1%;
+}
+.conteudo_home_tittle span{
+    color: rgba(41, 88, 255, 1);
+}
+.conteudo_home_subtittle{
+    font-family: "Space Grotesk";
+    font-size: 1rem;
+    color: rgba(37, 38, 48, 0.6);
+    margin-top: -1%;
+}
+.conteudo_home_linkMail{
+    font-family: "Space Grotesk";
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgba(37, 38, 48, 1);
+
+}
+.conteudo_home_linkMail a{
+    color: rgba(41, 88, 255, 1);
+    text-decoration: none;
+}
+.conteudo_home_linkMail span{
+    color: rgba(41, 88, 255, 1);
+    border-bottom: 2px solid rgba(41, 88, 255, 1);
+}
+.conteudo_home_linkMail a:hover{
+    color: #FF3F00;
+    transition: all 0.3s ease-in;
+}
+.conteudo_home_linkMail span:hover{
+    color: #FF3F00;
+    border-bottom: 2px solid #FF3F00;
+    transition: all 0.3s ease-in;
+}
+.conteudo_home_btn{
+    font-family: "Space Grotesk";
+    color: #FFF;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    width: 250px;
+    background-color: rgba(41, 88, 255, 1);
+    gap: 10px;
+    margin-top: 3%;
+}
+.conteudo_home_btn img{
+    height: 30px;
+}
+.conteudo_home_btn:hover{
+    background-color: #FF3F00;
+    transition: all 0.3s ease-out;
+}
+#projetos{
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    height: 90vh;
+}
+.projetos_title{
+    font-family: "Epilogue";
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #FFF;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+.projetos_title span{
+    color: #FF3F00;
+}
+.conteudo_projetos{
+    display: flex;
+    flex-direction: column;
+    max-height: auto;
+    width: 100%;
+    margin-top: 2%;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.card_conteudo_projetos{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+}
+.conteudo1_card_conteudo_projetos{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-height: auto;
+    margin-left: 3%;
+}
+.title_card_conteudo_projetos{
+    font-family: "Epilogue";
+    font-weight: 500;
+    color: #FFF;
+    font-size: 1.6rem;
+}
+.texto_card_conteudo_projetos{
+    font-family: "Epilogue";
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: #FFF;
+    margin-top: -1%;
+}
+.texto_card_conteudo_projetos span{
+    color: #FFC226;
+    margin-left: 1%;
+}
+.img_card_conteudo_projetos{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img_card_conteudo_projetos img{
+    height: 40px;
+}
+.img_card_conteudo_projetos img:hover{
+    scale: 1.1;
+    transition: all 0.3s ease-out;
+}
+.divisao_projetos{
+    display: flex;
+    width: 90%;
+    height: 2px;
+    background-color: #262835;
+}
+.links_projetos{
+    font-family: "Epilogue";
+    font-weight: 500;
+    font-size: 1rem;
+    color: #FFF;
+    margin-left: 3%;
+    margin-top: 3%;
+    text-decoration: none;
+}
+.links_projetos a{
+    text-decoration: none;
+    color: #2958FF;
+}
+.links_projetos a:hover{
+    color: #FF3F00;
+    transition: all 0.3s ease-in;
+}
+.links_projetos span{
+    color: #2958FF;
+    border-bottom: 2px solid #2958FF;
+}
+.links_projetos span:hover{
+    border-bottom: 2px solid #FF3F00;
+    transition: all 0.3s ease-in;
+}
+#aboutme{
+    background-color: #000;
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+}
+.aboutme_conteudo{
+    display: flex;
+    flex-direction: row;
+    max-height: auto;
+    width: 100%;
+    margin-top: 3%;
+    align-items: center;
+    justify-content: center;
+}
+.aboutme_conteudo_imagem{
+    display: flex;
+    height: 600px;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+.aboutme_conteudo_imagem img{
+    height: 600px;
+}
+.aboutme_textos{
+    display: flex;
+    height: 600px;
+    width: 30%;
+    margin-left: 3%;
+}
+.aboutme_textos p{
+    font-family: "Space Grotesk";
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: #FFF;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    background-color: #000;
+    width: 100%;
+    height: 80vh;
+}
+.footer_title{
+    font-family: "Epilogue";
+    font-weight: 700;
+    font-size: 1.9rem;
+    color: #FFF;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+.footer_title span{
+    color: #2958FF;
+}
+.footer_paragrafo1{
+    font-family: "Epilogue";
+    font-weight: 300;
+    color: rgba(226, 226, 226, 0.65);
+    font-size: 1.2rem;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+.footer_paragrafo_link{
+    font-family: "Epilogue";
+    font-weight: 300;
+    color: #fff;
+    font-size: 1.1rem;
+    margin-left: 3%;
+    margin-top: 5%;
+}
+.footer_paragrafo_link a{
+    text-decoration: none;
+    color: #FFC226;
+}
+.footer_paragrafo_link span{
+    color: #FFC226;
+    border-bottom: 2px solid #FFC226;
+}
+.btns_links_footer{
+    display: flex;
+    flex-direction: row;
+    max-height: auto;
+    width: 15%;
+    gap: 10px;
+    margin-left: 3%;
+    margin-top: 1%;
+}
+.btns_links_footer_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #FFC226;
+    border-radius: 50px;
+    gap: 15px 15px;
+}
+.btns_links_footer_btn a img{
+    height: 25px;
+}
+.footer_logo{
+    display: flex;
+    flex-direction: row;
+    margin-left: 3%;
+    margin-top: 5%;
+    height: 80px;
+    width: 95%;
+    align-items: baseline;
+}
+.footer_logo img{
+    height: 80px;
+}
+.footer_logo_p{
+    font-family: "Epilogue";
+    font-weight: 300;
+    color: rgba(226, 226, 226, 0.65);
+    font-size: 1rem;
+    margin-left: 75%;
+}
+
+
+@media screen and (max-width: 768px) {
+    .cabecalho{
+        padding: 5px 25px;
+    }
+    .divisao_header{
+        display: none;
+    }
+    .logo_header{
+        margin-top: 5%;
+        height: 40px;
+        margin-left: -5%;
+    }
+    .logo_header img{
+        height: 40px;
+    }
+    .nav_links{
+        display: none;
+    }
+    .btn_translator{
+        display: none;
+    }
+    .btns_links_header{
+        display: none;
+    }
+
+    .conteudo_home{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-height: auto;
+        width: 100%;
+        margin-top: 10%;
+        margin-left: 0%;
+    }
+    .conteudo_home_saudacao{
+        font-family: "Space Grotesk";
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: rgba(36, 37, 44, 0.4784);
+    }
+    .conteudo_home_tittle{
+        font-family: "Epilogue";
+        font-weight: 600;
+        font-size: 1.6rem;
+        color: rgba(37, 38, 48, 1);
+        margin-top: -1%;
+        width: 100%;
+        word-wrap: break-word;
+    }
+    .conteudo_home_subtittle{
+        font-family: "Space Grotesk";
+        font-size: 0.9rem;
+        color: rgba(37, 38, 48, 0.6);
+        margin-top: -1%;
+    }
+    .conteudo_home_linkMail{
+        font-family: "Space Grotesk";
+        font-weight: 500;
+        font-size: 0.9rem;
+        color: rgba(37, 38, 48, 1);
+    }
+    .conteudo_home_btn{
+        font-family: "Space Grotesk";
+        color: #FFF;
+        font-weight: 500;
+        text-decoration: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 45px;
+        width: 450px;
+        background-color: rgba(41, 88, 255, 1);
+        margin-top: 3%;
+        font-size: 0.9rem;
+    }
+    .conteudo_home_btn img{
+        display: none;
+    }
+    #home{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 50vh;
+    }   
+    #projetos{
+        display: flex;
+        flex-direction: column;
+        background-color: #000;
+        width: 100%;
+        height: 70vh;
+    }
+    .projetos_title{
+        font-family: "Epilogue";
+        font-weight: 600;
+        font-size: 1.6rem;
+        color: #FFF;
+        margin-left: 3%;
+        margin-top: 5%;
+    }
+    .conteudo_projetos{
+        display: flex;
+        flex-direction: column;
+        max-height: auto;
+        width: 100%;
+        margin-top: 2%;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+    .card_conteudo_projetos{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100px;
+        width: 100%;
+    }
+    .conteudo1_card_conteudo_projetos{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-height: auto;
+        margin-left: 3%;
+    }
+    .title_card_conteudo_projetos{
+        font-family: "Epilogue";
+        font-weight: 500;
+        color: #FFF;
+        font-size: 1.4rem;
+    }
+    .texto_card_conteudo_projetos{
+        font-family: "Epilogue";
+        font-weight: 400;
+        font-size: 0.8rem;
+        color: #FFF;
+        margin-top: -1%;
+    }
+    .img_card_conteudo_projetos{
+        width: 50px;
+        height: 30px;
+        margin-right: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .img_card_conteudo_projetos img{
+        height: 30px;
+    }
+    .links_projetos{
+        font-family: "Epilogue";
+        font-weight: 500;
+        font-size: 1rem;
+        color: #FFF;
+        margin-left: 3%;
+        margin-top: 3%;
+        text-decoration: none;
+        word-wrap: break-word;
+        line-height: 25px;
+    }
+
+    #aboutme{
+        background-color: #000;
+        width: 100%;
+        height: 130vh;
+        display: flex;
+        flex-direction: column;
+    }
+    .aboutme_conteudo{
+        display: flex;
+        flex-direction: column;
+        max-height: auto;
+        width: 100%;
+        margin-top: 3%;
+        align-items: center;
+        justify-content: center;
+    }
+    .aboutme_conteudo_imagem{
+        display: flex;
+        height: 600px;
+        width: 30%;
+        align-items: center;
+        justify-content: center;
+    }
+    .aboutme_conteudo_imagem img{
+        height: 500px;
+    }
+    .aboutme_textos{
+        display: flex;
+        height: 600px;
+        width: 100%;
+        margin-left: 3%;
+        justify-content: center;
+    }
+    .projetos_title{
+        font-size: 1.6rem;
+    }
+    .aboutme_textos p{
+        font-family: "Space Grotesk";
+        font-weight: 400;
+        font-size: 1.1rem;
+        color: #FFF;
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    footer{
+        display: flex;
+        flex-direction: column;
+        background-color: #000;
+        width: 100%;
+        height: 55vh;
+    }
+    .footer_title{
+        font-family: "Epilogue";
+        font-weight: 700;
+        font-size: 1.6rem;
+        color: #FFF;
+        margin-left: 3%;
+        margin-top: 3%;
+    }
+    .footer_paragrafo1{
+        font-family: "Epilogue";
+        font-weight: 300;
+        color: rgba(226, 226, 226, 0.65);
+        font-size:  1rem;
+        margin-left: 3%;
+        margin-top: 1%;
+    }
+    .footer_paragrafo_link{
+        font-family: "Epilogue";
+        font-weight: 300;
+        color: #fff;
+        font-size: 1rem;
+        margin-left: 3%;
+        margin-top: 5%;
+    }
+    .btns_links_footer{
+        display: flex;
+        flex-direction: row;
+        max-height: auto;
+        width: 35%;
+        gap: 10px;
+        margin-left: 3%;
+        margin-top: 1%;
+    }
+    .btns_links_footer_btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background-color: #FFC226;
+        border-radius: 50px;
+        gap: 15px 15px;
+    }
+    .btns_links_footer_btn a img{
+        height: 25px;
+    }
+    .footer_logo{
+        display: flex;
+        flex-direction: row;
+        margin-left: 3%;
+        margin-top: 10%;
+        height: 150px;
+        width: 95%;
+        align-items: baseline;
+    }
+    .footer_logo img{
+        display: block;
+        position: absolute;
+        height: 60px;
+    }
+    .footer_logo_p{
+        font-family: "Epilogue";
+        font-weight: 300;
+        color: rgba(226, 226, 226, 0.65);
+        font-size: 1rem;
+        margin-left: 3%;
+        margin-top: 20%;
+    }
+}
