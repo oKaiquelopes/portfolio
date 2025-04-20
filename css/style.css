@@ -551,12 +551,30 @@ footer{
         width: 100%;
         height: 80vh;
     }
+    .conteudo_home_saudacao{
+        font-size: 0.9rem;
+    }
+    .conteudo_home_tittle{
+       font-size: 1.4rem;
+       width: 100%;
+    }
+    .conteudo_home_subtittle{
+        font-size:0.8rem;
+        width: 100%;
+    }
+    .conteudo_home_linkMail{
+        font-size:0.8rem;
+    }
+    .conteudo_home_btn{
+        font-size: 0.8rem;
+        width: 40%;
+    }
     #projetos{
         display: flex;
         flex-direction: column;
         background-color: #000;
         width: 100%;
-        height: 70vh;
+        height: 80vh;
     }
     .projetos_title{
         font-family: "Epilogue";
@@ -643,18 +661,18 @@ footer{
     }
     .aboutme_conteudo_imagem{
         display: flex;
-        height: 600px;
-        width: 30%;
+        height: 500px;
+        width: 20%;
         align-items: center;
         justify-content: center;
     }
     .aboutme_conteudo_imagem img{
-        height: 500px;
+        height: 450px;
     }
     .aboutme_textos{
         padding: 10px;
         display: flex;
-        height: 600px;
+        height: 700px;
         width: 100%;
         margin-left: 3%;
         justify-content: center;
@@ -674,11 +692,12 @@ footer{
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 60vh;
+        height: 70vh;
         justify-content: center;
     }   
     .title {
         font-size: 1.6rem;
+        margin-top: 5%;
     }
     .content {
         display: flex;
