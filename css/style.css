@@ -24,14 +24,6 @@ body{
     max-height: auto;
     padding: 15px 45px;
 }
-.divisao_header{
-    display: flex;
-    flex-direction: column;
-    width: 2px;
-    height: 30px;
-    margin: 1%;
-    background-color: rgba(226, 226, 226, 0.5);
-}
 .logo_header{
     display: flex;
     align-items: center;
@@ -48,9 +40,9 @@ body{
     align-items: center;
     justify-content: center;
     max-height: auto;
-    width: 20%;
+    width: 40%;
     gap: 15px;
-    margin-left: 25%;
+    margin-left: 60%;
 }
 .nav_links a{
     font-family: "Epilogue";
@@ -62,52 +54,6 @@ body{
 .nav_links a:hover{
     color: #FF3F00;
     transition: all 0.3s ease-out;
-}
-.btn_translator{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    max-height: auto;
-    width: 100px;
-    padding: 15px 15px;
-    border-radius: 30px;
-    background-color: rgba(135, 161, 253, 0.35);
-    gap: 5px;
-    margin-left: 1%;
-}
-.btn_translator_img{
-    height: 20px;
-}
-.btn_translator_a{
-    font-family: "Epilogue";
-    font-weight: 500;
-    font-size: 1.1rem;
-    color: #2958FF;
-    text-decoration: none;
-}
-.btns_links_header{
-    display: flex;
-    flex-direction: row;
-    max-height: auto;
-    width: 15%;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    margin-left: 1%;
-}
-.btns_links_header_btn{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    background-color: rgba(135, 161, 253, 0.35);
-    border-radius: 50px;
-    gap: 15px 15px;
-}
-.btns_links_header_btn a img{
-    height: 25px;
 }
 #home{
     display: flex;
@@ -317,21 +263,123 @@ body{
     width: 30%;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
 }
 .aboutme_conteudo_imagem img{
     height: 600px;
+    border-radius: 10px;
 }
 .aboutme_textos{
     display: flex;
     height: 600px;
-    width: 30%;
+    width: 40%;
     margin-left: 3%;
 }
 .aboutme_textos p{
     font-family: "Space Grotesk";
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #FFF;
+}
+.budget-section {
+    background-color: #000;
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.title {
+    font-family: "Epilogue";
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: #fff;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+.content {
+    display: flex;
+    flex: 1;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.description {
+    flex: 1;
+    margin-left: 3%;
+    min-width: 480px;
+    max-width: 400px;
+    background-color: #e2e8f0;
+    padding: 20px;
+    border-radius: 12px;
+}
+.description h2 {
+    font-family: "Epilogue";
+    font-weight: 600;
+    font-size: 1.3rem;
+    color: #000;
+}
+.description p {
+    font-family: "Epilogue";
+    font-weight: 400;
+    font-size: 1rem;
+    color: #363636;
+}
+.form {
+    border: 1px solid white;
+    flex: 2;
+    min-width: 300px;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+.form label {
+    margin-top: 12px;
+    font-weight: 500;
+    font-family: "Epilogue";
+    font-weight: 400;
+    font-size: 1rem;
+    color: #fff;
+}
+.form textarea,
+.form input {
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    margin-top: 4px;
+    font-size: 16px;
+    background-color: #f1f5f9;
+    transition: border-color 0.2s ease;
+    font-family: "Epilogue";
+    font-weight: 400;
+    font-size: 1rem;
+    color: #000;
+}
+.form input:focus,
+.form textarea:focus {
+    border-color: #3b82f6;
+    outline: none;
+}
+.form button {
+    font-family: "Epilogue";
+    font-weight: 400;
+    font-size: 1rem;
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #2958FF;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.form button:hover {
+    background-color: #2563eb;
 }
 footer{
     display: flex;
@@ -461,7 +509,7 @@ footer{
     .conteudo_home_tittle{
         font-family: "Epilogue";
         font-weight: 600;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         color: rgba(37, 38, 48, 1);
         margin-top: -1%;
         width: 100%;
@@ -469,14 +517,14 @@ footer{
     }
     .conteudo_home_subtittle{
         font-family: "Space Grotesk";
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         color: rgba(37, 38, 48, 0.6);
         margin-top: -1%;
     }
     .conteudo_home_linkMail{
         font-family: "Space Grotesk";
         font-weight: 500;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         color: rgba(37, 38, 48, 1);
     }
     .conteudo_home_btn{
@@ -489,10 +537,10 @@ footer{
         align-items: center;
         justify-content: center;
         height: 45px;
-        width: 370px;
+        width: 250px;
         background-color: rgba(41, 88, 255, 1);
         margin-top: 3%;
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
     .conteudo_home_btn img{
         display: none;
@@ -501,8 +549,8 @@ footer{
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 55vh;
-    }   
+        height: 80vh;
+    }
     #projetos{
         display: flex;
         flex-direction: column;
@@ -513,7 +561,7 @@ footer{
     .projetos_title{
         font-family: "Epilogue";
         font-weight: 600;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         color: #FFF;
         margin-left: 3%;
         margin-top: 5%;
@@ -546,12 +594,12 @@ footer{
         font-family: "Epilogue";
         font-weight: 500;
         color: #FFF;
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
     .texto_card_conteudo_projetos{
         font-family: "Epilogue";
         font-weight: 400;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         color: #FFF;
         margin-top: -1%;
     }
@@ -569,7 +617,7 @@ footer{
     .links_projetos{
         font-family: "Epilogue";
         font-weight: 500;
-        font-size: 0.9rem;
+        font-size: 1rem;
         color: #FFF;
         margin-left: 3%;
         margin-top: 3%;
@@ -577,11 +625,10 @@ footer{
         word-wrap: break-word;
         line-height: 25px;
     }
-
     #aboutme{
         background-color: #000;
         width: 100%;
-        height: 150vh;
+        height: 145vh;
         display: flex;
         flex-direction: column;
     }
@@ -605,34 +652,104 @@ footer{
         height: 500px;
     }
     .aboutme_textos{
+        padding: 10px;
         display: flex;
         height: 600px;
-        width: 80%;
+        width: 100%;
+        margin-left: 3%;
         justify-content: center;
     }
     .projetos_title{
-        font-size: 1.4rem;
+        font-size: 1.6rem;
     }
     .aboutme_textos p{
         font-family: "Space Grotesk";
         font-weight: 400;
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: #FFF;
         width: 100%;
         word-wrap: break-word;
     }
-
+    .budget-section{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 60vh;
+        justify-content: center;
+    }   
+    .title {
+        font-size: 1.6rem;
+    }
+    .content {
+        display: flex;
+       
+    }
+    .description {
+       display: none;
+    }
+    .form {
+        display: flex;
+        border: none;
+        width: 340px;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+        flex-direction: column;
+        margin-left: 0;
+        margin-top: -20%;
+    }
+    .form label {
+        margin-top: 12px;
+        font-weight: 500;
+        font-family: "Epilogue";
+        font-weight: 400;
+        font-size: 1rem;
+        color: #fff;
+    }
+    .form textarea,
+    .form input {
+        padding: 10px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        margin-top: 4px;
+        font-size: 16px;
+        background-color: #f1f5f9;
+        transition: border-color 0.2s ease;
+        font-family: "Epilogue";
+        font-weight: 400;
+        font-size: 1rem;
+        color: #000;
+    }
+    .form input:focus,
+    .form textarea:focus {
+        border-color: #3b82f6;
+        outline: none;
+    }
+    .form button {
+        font-family: "Epilogue";
+        font-weight: 400;
+        font-size: 1rem;
+        margin-top: 20px;
+        padding: 12px;
+        background-color: #2958FF;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
     footer{
         display: flex;
         flex-direction: column;
         background-color: #000;
         width: 100%;
-        height: 55vh;
+        height: 60vh;
     }
     .footer_title{
         font-family: "Epilogue";
         font-weight: 700;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
         color: #FFF;
         margin-left: 3%;
         margin-top: 3%;
@@ -641,7 +758,7 @@ footer{
         font-family: "Epilogue";
         font-weight: 300;
         color: rgba(226, 226, 226, 0.65);
-        font-size:  0.9rem;
+        font-size:  1rem;
         margin-left: 3%;
         margin-top: 1%;
     }
@@ -649,7 +766,7 @@ footer{
         font-family: "Epilogue";
         font-weight: 300;
         color: #fff;
-        font-size: 0.9rem;
+        font-size: 1rem;
         margin-left: 3%;
         margin-top: 5%;
     }
@@ -657,7 +774,7 @@ footer{
         display: flex;
         flex-direction: row;
         max-height: auto;
-        width: 50%;
+        width: 35%;
         gap: 10px;
         margin-left: 3%;
         margin-top: 1%;
@@ -666,14 +783,14 @@ footer{
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
+        width: 45px;
+        height: 45px;
         background-color: #FFC226;
         border-radius: 50px;
         gap: 15px 15px;
     }
     .btns_links_footer_btn a img{
-        height: 20px;
+        height: 25px;
     }
     .footer_logo{
         display: flex;
@@ -687,14 +804,14 @@ footer{
     .footer_logo img{
         display: block;
         position: absolute;
-        height: 50px;
+        height: 60px;
     }
     .footer_logo_p{
         font-family: "Epilogue";
         font-weight: 300;
         color: rgba(226, 226, 226, 0.65);
-        font-size: 0.9rem;
+        font-size: 1rem;
         margin-left: 3%;
-        margin-top: 25%;
+        margin-top: 20%;
     }
 }
