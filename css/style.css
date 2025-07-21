@@ -538,7 +538,7 @@ footer{
         justify-content: center;
         height: 45px;
         width: 250px;
-        background-color: rgba(41, 88, 255, 1);
+        background-color: rgba(200, 168, 84, 1);
         margin-top: 3%;
         font-size: 0.9rem;
     }
@@ -750,7 +750,7 @@ footer{
         font-size: 1rem;
         margin-top: 20px;
         padding: 12px;
-        background-color: #2958FF;
+        background-color: rgba(200, 168, 84, 1);
         color: white;
         font-weight: bold;
         border: none;
