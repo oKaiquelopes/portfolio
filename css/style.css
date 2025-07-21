@@ -52,7 +52,7 @@ body{
     text-decoration: none;
 }
 .nav_links a:hover{
-    color: #FF3F00;
+    color: rgba(200, 168, 84, 1);
     transition: all 0.3s ease-out;
 }
 #home{
@@ -83,7 +83,7 @@ body{
     margin-top: -1%;
 }
 .conteudo_home_tittle span{
-    color: rgba(41, 88, 255, 1);
+    color: rgba(200, 168, 84, 1);
 }
 .conteudo_home_subtittle{
     font-family: "Space Grotesk";
@@ -99,20 +99,20 @@ body{
 
 }
 .conteudo_home_linkMail a{
-    color: rgba(41, 88, 255, 1);
+    color: rgba(200, 168, 84, 1);
     text-decoration: none;
 }
 .conteudo_home_linkMail span{
-    color: rgba(41, 88, 255, 1);
-    border-bottom: 2px solid rgba(41, 88, 255, 1);
+    color: rgba(200, 168, 84, 1);
+    border-bottom: 2px solid rgba(200, 168, 84, 1);
 }
 .conteudo_home_linkMail a:hover{
-    color: #FF3F00;
+    color: rgba(150, 125, 60, 1);
     transition: all 0.3s ease-in;
 }
 .conteudo_home_linkMail span:hover{
-    color: #FF3F00;
-    border-bottom: 2px solid #FF3F00;
+    color: rgba(150, 125, 60, 1);
+    border-bottom: 2px solid rgba(150, 125, 60, 1);
     transition: all 0.3s ease-in;
 }
 .conteudo_home_btn{
@@ -126,7 +126,7 @@ body{
     justify-content: center;
     height: 60px;
     width: 250px;
-    background-color: rgba(41, 88, 255, 1);
+    background-color: rgba(200, 168, 84, 1);
     gap: 10px;
     margin-top: 3%;
 }
@@ -134,7 +134,7 @@ body{
     height: 30px;
 }
 .conteudo_home_btn:hover{
-    background-color: #FF3F00;
+    background-color: rgba(150, 125, 60, 1);
     transition: all 0.3s ease-out;
 }
 #projetos{
@@ -153,7 +153,7 @@ body{
     margin-top: 3%;
 }
 .projetos_title span{
-    color: #FF3F00;
+    color: rgba(200, 168, 84, 1);
 }
 .conteudo_projetos{
     display: flex;
@@ -193,7 +193,7 @@ body{
     margin-top: -1%;
 }
 .texto_card_conteudo_projetos span{
-    color: #FFC226;
+    color: rgba(150, 125, 60, 1);
     margin-left: 1%;
 }
 .img_card_conteudo_projetos{
@@ -227,18 +227,18 @@ body{
 }
 .links_projetos a{
     text-decoration: none;
-    color: #2958FF;
+    color: rgba(200, 168, 84, 1);
 }
 .links_projetos a:hover{
-    color: #FF3F00;
+    color: rgba(150, 125, 60, 1);
     transition: all 0.3s ease-in;
 }
 .links_projetos span{
-    color: #2958FF;
-    border-bottom: 2px solid #2958FF;
+    color: rgba(200, 168, 84, 1);
+    border-bottom: 2px solid rgba(200, 168, 84, 1);
 }
 .links_projetos span:hover{
-    border-bottom: 2px solid #FF3F00;
+    border-bottom: 2px solid rgba(150, 125, 60, 1);
     transition: all 0.3s ease-in;
 }
 #aboutme{
@@ -335,7 +335,7 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    margin-left: 10%;
+    margin-left: 15%;
 }
 .form label {
     margin-top: 12px;
@@ -361,7 +361,7 @@ body{
 }
 .form input:focus,
 .form textarea:focus {
-    border-color: #3b82f6;
+    border-color: rgba(200, 168, 84, 1);
     outline: none;
 }
 .form button {
@@ -370,7 +370,7 @@ body{
     font-size: 1rem;
     margin-top: 20px;
     padding: 12px;
-    background-color: #2958FF;
+    background-color: rgba(200, 168, 84, 1);
     color: white;
     font-weight: bold;
     border: none;
@@ -379,7 +379,7 @@ body{
     transition: background 0.3s ease;
 }
 .form button:hover {
-    background-color: #2563eb;
+    background-color: rgba(150, 125, 60, 1);
 }
 footer{
     display: flex;
@@ -397,7 +397,7 @@ footer{
     margin-top: 3%;
 }
 .footer_title span{
-    color: #2958FF;
+    color: rgba(200, 168, 84, 1);
 }
 .footer_paragrafo1{
     font-family: "Epilogue";
@@ -417,7 +417,7 @@ footer{
 }
 .footer_paragrafo_link a{
     text-decoration: none;
-    color: #FFC226;
+    color: rgba(200, 168, 84, 1);
 }
 .footer_paragrafo_link span{
     color: #FFC226;
@@ -438,7 +438,7 @@ footer{
     justify-content: center;
     width: 45px;
     height: 45px;
-    background-color: #FFC226;
+    background-color: rgba(200, 168, 84, 1);
     border-radius: 50px;
     gap: 15px 15px;
 }
