@@ -142,7 +142,7 @@ body{
     flex-direction: column;
     background-color: #000;
     width: 100%;
-    height: 90vh;
+    height: 140vh;
 }
 .projetos_title{
     font-family: "Epilogue";
@@ -538,7 +538,7 @@ footer{
         justify-content: center;
         height: 45px;
         width: 250px;
-        background-color: rgba(200, 168, 84, 1);
+        background-color: rgba(41, 88, 255, 1);
         margin-top: 3%;
         font-size: 0.9rem;
     }
@@ -568,13 +568,14 @@ footer{
     .conteudo_home_btn{
         font-size: 0.8rem;
         width: 40%;
+        background-color: rgba(200, 168, 84, 1);
     }
     #projetos{
         display: flex;
         flex-direction: column;
         background-color: #000;
         width: 100%;
-        height: 80vh;
+        height: 125vh;
     }
     .projetos_title{
         font-family: "Epilogue";
