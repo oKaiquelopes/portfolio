@@ -10,28 +10,50 @@
 <body>
     <main>
         <header class="cabecalho">
-            <div class="logo_header"><img src="css/imgs/LogoK-B-SVG.svg" alt=""></div>
-            <div class="nav_links">
-                <a id="cabecalho_id" href="#.budget-section">• solicite um orçamento</a>
-                <a id="cabecalho_id" href="#projetos">• projetos</a>
-                <a id="cabecalho_id" href="#aboutme">• sobre</a>
-                <a id="cabecalho_id" href="mailto:fkaiquelopes@gmail.com">• contato</a>
+            <div class="logo_header">
+                <img src="css/imgs/LogoK-B-SVG.svg" alt="">
             </div>
+
+            <!-- MENU DESKTOP -->
+            <div class="nav_links menu-desktop">
+                <a href="#budget-section">• solicite um orçamento</a>
+                <a href="#projetos">• projetos</a>
+                <a href="#aboutme">• sobre</a>
+                <a href="https://api.whatsapp.com/send?phone=5515996916423&text=Ol%C3%A1%21%20Vim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio%21%20" target="_blank">• contato</a>
+            </div>
+
+            <!-- BOTÃO HAMBURGER -->
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </header>
-        <section id="home" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
-            <div class="conteudo_home">
-                <p class="conteudo_home_saudacao">Olá, visitante 👋</p>
-                <h1 class="conteudo_home_tittle">Me chamo <span>Kaique Lopes</span> e eu sou<br>desenvolvedor front-end e UX/UI<br>designer.</h1>
-                <p class="conteudo_home_subtittle">Minha missão é criar soluções digitais criativas e funcionais.<br>Também atuo como educador de tecnologia, compartilhando<br>conhecimento, e realizo manutenção em computadores,<br>integrando teoria e prática no mundo da tecnologia. 🚀</p>
-                <p class="conteudo_home_linkMail">Como posso te ajudar? <span><a href="">fkaiquelopes@gmail.com</a></span></p>
-                <a href="#projetos" class="conteudo_home_btn">Veja meus trabalhos <img src="css/icons/seta_branca.png" alt=""></a>
+
+            <!-- MENU MOBILE -->
+            <nav class="menu-mobile" id="menuMobile">
+            <a href="#budget-section">• solicite um orçamento</a>
+            <a href="#projetos">• projetos</a>
+            <a href="#aboutme">• sobre</a>
+            <a href="https://api.whatsapp.com/send?phone=5515996916423&text=Ol%C3%A1%21%20Vim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio%21%20" target="_blank">• contato</a>
+            </nav>
+
+            <div class="overlay" id="overlay"></div>
+
+        <section id="home">
+            <div class="conteudo_home reveal">
+                <p class="conteudo_home_saudacao">Olá, visitante! 👋</p>
+                <h1 class="conteudo_home_tittle">Eu sou <span>Kaique Lopes</span>, <br>desenvolvedor front-end e<br>UX/UI designer.</h1>
+                <p class="conteudo_home_subtittle">Desenvolvo soluções digitais focadas em experiência do usuário e resultado.<br>Do design ao código, também atuo com educação em tecnologia e manutenção de computadores, oferecendo uma solução completa.</p>
+                <p class="conteudo_home_linkMail">Quer dar vida ao seu projeto? <span><a href="https://api.whatsapp.com/send?phone=5515996916423&text=Ol%C3%A1%21%20Vim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio%21%20" target="_blank">Vamos conversar.</a></span></p>
+                <a href="#projetos" class="conteudo_home_btn reveal">Veja meus trabalhos <img src="css/icons/seta_branca.png" alt=""></a>
             </div>
         </section>
-        <section id="projetos" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+        <section id="projetos">
             <h1 class="projetos_title">Coisas que <span>já fiz</span></h1>      
-            <div class="conteudo_projetos" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+            <div class="conteudo_projetos">
                 <div class="card_conteudo_projetos">
-                    <div class="conteudo1_card_conteudo_projetos">
+                    <div class="conteudo1_card_conteudo_projetos reveal">
                         <h2 class="title_card_conteudo_projetos">Site - Bucchino Autorale</h2>
                         <p class="texto_card_conteudo_projetos">Maio | 2025 <span>Bucchino Autorale.</span></p>
                     </div>
@@ -42,7 +64,7 @@
                     </div>
                 </div>
                 <hr class="divisao_projetos">
-                <div class="card_conteudo_projetos">
+                <div class="card_conteudo_projetos reveal">
                     <div class="conteudo1_card_conteudo_projetos">
                         <h2 class="title_card_conteudo_projetos">Portal - Knob Tecnologia</h2>
                         <p class="texto_card_conteudo_projetos">Setembro | 2025 <span>Knob Tecnologia.</span></p>
@@ -54,7 +76,7 @@
                     </div>
                 </div>
                 <hr class="divisao_projetos">
-                <div class="card_conteudo_projetos">
+                <div class="card_conteudo_projetos reveal">
                     <div class="conteudo1_card_conteudo_projetos">
                         <h2 class="title_card_conteudo_projetos">Site - PowerPro</h2>
                         <p class="texto_card_conteudo_projetos">Setembro | 2025 <span>Knob Tecnologia.</span></p>
@@ -66,7 +88,7 @@
                     </div>
                 </div>
                 <hr class="divisao_projetos">
-                <div class="card_conteudo_projetos">
+                <div class="card_conteudo_projetos reveal">
                     <div class="conteudo1_card_conteudo_projetos">
                         <h2 class="title_card_conteudo_projetos">Site - Knob Solar</h2>
                         <p class="texto_card_conteudo_projetos">Setembro | 2025 <span>Knob Solar.</span></p>
@@ -78,43 +100,41 @@
                     </div>
                 </div>
                 <hr class="divisao_projetos">
-                <div class="card_conteudo_projetos">
+                <div class="card_conteudo_projetos reveal">
                     <div class="conteudo1_card_conteudo_projetos">
                         <h2 class="title_card_conteudo_projetos">Calcular - Área de Produção</h2>
                         <p class="texto_card_conteudo_projetos">Julho | 2025 <span>Freelancer.</span></p>
                     </div>
                     <div class="img_card_conteudo_projetos">
-                        <a href="https://okaiquelopes.github.io/descubraarea" target="_blank" rel="noopener noreferrer">
+                        <a href="https://okaiquelopes.github.io/descubraarea/" target="_blank" rel="noopener noreferrer">
                             <img src="css/icons/img_link.png" alt="">
                         </a>
                     </div>
                 </div>
             </div>  
             <hr class="divisao_projetos">
-            <p class="links_projetos">Você pode ver mais trabalhos meus no <span><a  href="https://github.com/oKaiquelopes" target="_blank" rel="noopener noreferrer">GitHub</a></span>.</p>
+            <p class="links_projetos reveal">Você pode ver mais trabalhos meus no <span><a  href="https://github.com/oKaiquelopes" target="_blank" rel="noopener noreferrer">GitHub</a></span>.</p>
         </section>
-        <section id="aboutme" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+        <section id="aboutme">
             <h1 class="projetos_title">Um pouco mais <span>sobre mim</span></h1>   
-            <div class="aboutme_conteudo" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+            <div class="aboutme_conteudo reveal">
                 <div class="aboutme_conteudo_imagem">
                     <img src="css/imgs/ka_frente_p.jpg" alt="">
                 </div>
                 <div class="aboutme_textos">
                     <p>
-                        Sou Kaique Lopes, desenvolvedor front-end com experiência tanto em programação tradicional quanto no uso de ferramentas no-code. Trabalho com HTML, CSS, JavaScript e Python, desenvolvendo interfaces modernas, acessíveis e funcionais.
+                        Sou Kaique Lopes, desenvolvedor front-end com atuação em programação tradicional e soluções no-code. Trabalho com HTML, CSS, JavaScript e Python no desenvolvimento de interfaces modernas, acessíveis e orientadas à experiência do usuário.
                         <br><br>
-                        Atualmente, integro o time de criação da Knob Tecnologia, onde colaboro no desenvolvimento de soluções digitais que melhoram a experiência dos nossos clientes. Paralelamente, sou educador de tecnologia na Casa OPOCA, instituição sem fins lucrativos, onde ensino crianças e adolescentes a explorarem o mundo da tecnologia de forma criativa e inclusiva.
+                        Atualmente faço parte da equipe da Knob Tecnologia, contribuindo para a criação de produtos digitais eficientes e centrados no cliente. Também sou educador de tecnologia na Casa OPOCA, onde atuo na formação digital de crianças e adolescentes.
                         <br><br>
-                        Também tenho experiência com plataformas no-code como Wix, WordPress, Nuvemshop e Kiwify. Nas horas vagas, ofereço suporte técnico para microcomputadores e realizo trabalhos freelancers na área de TI.
+                        Possuo experiência com Wix, WordPress, Nuvemshop e Kiwify, além de atuar com suporte técnico para microcomputadores e projetos freelancers na área de TI.
                     </p>
                 </div>
             </div>
         </section>
-    </main>
-    <section class="budget-section" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
-        
+        <section class="budget-section" id="budget-section">
         <h1 class="projetos_title">Solicite um orçamento <span>gratuito</span></h1>
-        <div class="content">
+        <div class="content reveal">
           <div class="description">
             <h2>Como posso te ajudar?</h2>
             <p>
@@ -147,16 +167,17 @@
           </form>
         </div>
       </section>
-    <footer data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+    </main>
+    <footer data-aos="fade-up">
         <h1 class="footer_title">Let's work <span>together!</span></h1>
         <p class="footer_paragrafo1">
             Estou disponível para trabalhar em alguns<br>projetos como freelancer. Podemos<br>conversar sobre suas ideias.
         </p>
-        <p class="footer_paragrafo_link" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+        <p class="footer_paragrafo_link">
             Entre em contato: <span><a href="mailto:fkaiquelopes@gmail.com">fkaiquelopes@gmail.com</a></span> <br<br>
             Ou: <span><a href="https://api.whatsapp.com/send?phone=5515996916423&text=Ol%C3%A1%21%20Vim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio%21%20" target="_blank" rel="noopener noreferrer">WhatsApp</a></span>
         </p>
-        <div class="btns_links_footer" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-once="true">
+        <div class="btns_links_footer">
             <div class="btns_links_footer_btn">
                 <a href="https://www.behance.net/kaiquelopes6"><img src="css/icons/behance_preto.png" alt=""></a>
             </div>
@@ -169,14 +190,42 @@
         </div>
         <div class="footer_logo">
             <img src="css/imgs/LogoK-P-SVG.svg" alt="">
-            <p class="footer_logo_p">Desenvolvido com ☕ & 💛.</p>
+            <p class="footer_logo_p">Desenvolvido com ☕ & 💙.</p>
         </div>
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 <script>
-  AOS.init();
+  document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll('.reveal');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  elements.forEach(el => observer.observe(el));
+});
+
+  const hamburger = document.getElementById('hamburger')
+  const menu = document.getElementById('menuMobile')
+  const overlay = document.getElementById('overlay')
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active')
+    menu.classList.toggle('active')
+    overlay.classList.toggle('active')
+  })
+
+  overlay.addEventListener('click', () => {
+    hamburger.classList.remove('active')
+    menu.classList.remove('active')
+    overlay.classList.remove('active')
+  });
 </script>
 <script src="translator.js"></script>
 </html>
-
