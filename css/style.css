@@ -679,12 +679,7 @@ footer{
         justify-content: center;
     }
     .description{
-        display: flex;
-        flex-direction: column;
-        min-width: 330px;
-        max-width: 350px;
-        margin-left: 0;
-        margin-top: 5%;
+        display: none;
     }
     .description h2 {
         font-size: 1.2rem;
@@ -732,3 +727,4 @@ footer{
     }
 
 }
+
