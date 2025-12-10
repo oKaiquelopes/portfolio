@@ -331,7 +331,7 @@ body{
     transition: all 0.3s ease-in;
 }
 #aboutme{
-    background-color: #000;
+    background-color: #fff;
     width: 100%;
     height: 110vh;
     display: flex;
@@ -378,7 +378,141 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
+
+
+    .container {
+
+        margin-top: 5%;
+      width: 100%;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .info h1 {
+        font-family: 'Epilogue';
+      font-size: 2.3rem;
+        color: #FFF;
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .info p {
+                font-family: 'Epilogue';
+      font-size: 0.9rem;
+      margin-top: 5%;
+        color: #ccc;
+      opacity: .85;
+      margin-bottom: 18px;
+    }
+
+    .badges {
+              margin-top: 5%;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      font-size: 0.9rem;
+      color: #ccc;
+      font-family: 'Epilogue';
+      padding: 6px 12px;
+      background: rgba(255,255,255,.1);
+      border-radius: 20px;
+      border: 1px solid rgba(255,255,255,.15);
+    }
+
+    .card {
+      background: rgba(255,255,255,.06);
+      border-radius: 20px;
+      padding: 32px;
+      border: 1px solid rgba(255,255,255,.15);
+      backdrop-filter: blur(12px);
+    }
+
+    .step {
+      display: none;
+      animation: fade .4s ease;
+    }
+
+    .step.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .step h3 {
+        font-family: 'Epilogue';
+        color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 14px;
+    }
+
+    .options {
+      display: grid;
+      gap: 10px;
+      margin-top: 5%;
+    }
+
+    .option {
+        font-family: 'Epilogue';
+        color: #fff;
+        font-size: 0.9rem;
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.1);
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: .25s;
+    }
+
+    .option:hover {
+      border-color: #2086ff;
+      background: rgba(32,134,255,.2);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: none;
+      background: rgba(255,255,255,.15);
+      color: #fff;
+      outline: none;
+      margin-bottom: 12px;
+    }
+
+    textarea { resize: none; height: 90px }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      background: #2086ff;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .progress {
+        color: #ccc;
+        font-family: 'Epilogue';
+      font-size: 0.8rem;
+      opacity: .7;
+      text-align: right;
+      margin-bottom: 10px;
+    }
+
 .title {
     font-family: "Epilogue";
     font-weight: 600;
@@ -556,6 +690,101 @@ footer{
 }
 
 
+#about{
+    background-color: #000;
+    width: 100%;
+    height: 110vh;
+    display: flex;
+    flex-direction: column;
+    padding: 120px 10%;
+}
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+.about-image img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.4);
+}
+.about-tag {
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--textColorSpan);
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+.about-content h2 {
+    font-family: 'Epilogue', sans-serif;
+    color: #fff;
+    font-size: 2.3rem;
+    line-height: 1.2;
+    margin: 16px 0;
+}
+.about-content p {
+    font-family: 'Epilogue', sans-serif;
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.7;
+    margin-bottom: 24px;
+    max-width: 520px;
+}
+.about-skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 32px;
+}
+.about-skills li {
+    font-family: 'Epilogue', sans-serif;
+    list-style: none;
+    color: #fff;
+    background: rgba(255,255,255,0.05);
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+}
+.about-actions {
+    display: flex;
+    gap: 16px;
+}
+.btn-primary {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    background: var(--textColorSpan);
+    color: #000;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+}
+.btn-outline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    border: 1px solid var(--textColorSpan);
+    color: var(--textColorSpan);
+    padding: 14px 22px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+.btn-outline:hover{
+    transition: all 0.3s ease-out;
+    scale: 1.02;
+}
+.btn-primary:hover{
+    transition: all 0.3s ease-out;
+    scale: 1.02;
+}
+
+
+
+
+
+
 @media screen and (max-width: 768px) {
     .cabecalho{
         padding: 5px 25px;
@@ -580,7 +809,7 @@ footer{
     .btns_links_header{
         display: none;
     }
-    #home,#projetos,#aboutme,#budget-section{
+    #home,#projetos,#about,#budget-section{
         width: 100%;
         height: auto;
     }
@@ -725,6 +954,32 @@ footer{
         margin-top: 5%;
         margin-bottom: 10%;
     }
+    .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
 
+  .about-image {
+    display: flex;
+    justify-content: center;
+  }
+  .about-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .about-tag{
+    font-size: 0.8rem;
+  }
+  .about-content h2{
+    font-size: 1.7rem;
+  }
+  .about-content p{
+    font-size: 1rem;
+  }
+  .about-skills{
+    display: none;
+  }
+  .container {
+    grid-template-columns: 1fr;
+  }
 }
-
