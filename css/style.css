@@ -72,24 +72,37 @@ body{
 }
 /* --- HAMBURGER --- */
 .hamburger {
-  width: 20px;
-  height: 14px;
+  width: 24px;
+  height: 18px;
   display: none;
   flex-direction: column;
   justify-content: space-between;
   background: none;
-  border: none;
+  border: none;        /* removida a borda */
   cursor: pointer;
   z-index: 1001;
   align-self: center;
 }
+
 .hamburger span {
-  height: 2px;
+  height: 3px;
   width: 100%;
-  background: var(--textColor1);
-  border-radius: 2px;   /* deixa mais elegante */
+  background: var(--textColor1) !important; /* garante que NÃO fica branco */
+  border-radius: 3px;
   transition: transform 0.35s ease, opacity 0.25s ease;
 }
+
+/* --- ANIMAÇÃO DO BOTÃO --- */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -5px);
+}
+
 /* --- MENU MOBILE --- */
 .menu-mobile {
   position: fixed;
@@ -105,44 +118,40 @@ body{
   transition: 0.3s;
   z-index: 1000;
 }
+
 .menu-mobile a {
   font-family: "Epilogue";
   font-size: 1.1rem;
   text-decoration: none;
   color: var(--textColor1);
 }
+
 .menu-mobile.active {
   right: 0;
 }
+
 /* --- OVERLAY --- */
 .overlay {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.6);
   z-index: 999;
 }
 .overlay.active {
   display: block;
 }
-/* --- ANIMAÇÃO DO BOTÃO --- */
-.hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(4px, 4px);
-}
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(4px, -4px);
-}
+
 /* --- MOBILE --- */
 @media (max-width: 768px) {
-  .menu-desktop {
-    display: none;
-  }
+  .menu-desktop { display: none; }
 
   .hamburger {
     display: flex;
+    border: none !important; /* força sem borda */
+  }
+  .hamburger span {
+    background: var(--textColor1) !important; /* garante que NÃO fica branco */
   }
 }
 #home{
@@ -981,5 +990,41 @@ footer{
   }
   .container {
     grid-template-columns: 1fr;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .info{
+    text-align: center;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  .info h1{
+    font-size: 1.5rem;
+  }
+  .info p{
+    font-size: 0.9rem;
+  }
+  .badges{
+    justify-content: center;
+  }
+  .badge{
+    font-size: 0.8rem;
+  }
+  .card{
+    width: 80%;
+    margin: 0 auto;
+  }
+  .progress{
+    font-size: 0.7rem;
+  }
+  .step h3{
+    font-size: 1.2rem;
+  }
+  .option{
+    font-size: 0.8rem;
   }
 }
