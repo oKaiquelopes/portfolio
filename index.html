@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaique Lopes — Front-End Dev & UX/UI</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="css/imgs/LogoK - SVG.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="noise"></div>
+    <!-- HEADER -->
+    <header id="header">
+        <a href="#home" class="logo-wrap">
+            <img src="css/imgs/LOGO_LOPESTEC.png" alt="Kaique Lopes" class="logo-img">
+        </a>
+        <nav class="nav-desktop">
+            <a href="#projetos">projetos</a>
+            <a href="#about">sobre</a>
+            <a href="#budget-section">orçamento</a>
+            <a href="https://api.whatsapp.com/send?phone=5515996916423&text=Olá! Vim pelo portfólio!" target="_blank" class="nav-cta">→ contato</a>
+        </nav>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span>
+        </button>
+    </header>
+
+    <nav class="menu-mobile" id="menuMobile">
+        <a href="#projetos">projetos</a>
+        <a href="#about">sobre</a>
+        <a href="#budget-section">orçamento</a>
+        <a href="https://api.whatsapp.com/send?phone=5515996916423&text=Olá! Vim pelo portfólio!" target="_blank">contato</a>
+    </nav>
+    <div class="overlay" id="overlay"></div>
+
+    <!-- ══════════════ HERO ══════════════ -->
+    <section id="home">
+        <div class="hero-body">
+            <!-- ESQUERDA: status + nome grande + roles -->
+            <div class="hero-left">
+                <div class="hero-status">
+                    <span class="status-dot"></span>
+                    <span>disponível para projetos</span>
+                </div>
+                <h1 class="hero-name">
+                    <span class="hn-ola">olá, sou</span>
+                    <span class="hn-kaique">KAIQUE</span>
+                    <span class="hn-lopes">LOPES<span class="hn-dot">.</span></span>
+                </h1>
+                <div class="hero-roles">
+                    <span class="role-pill">Front-End Dev</span>
+                    <span class="role-slash">/</span>
+                    <span class="role-pill">UX/UI Designer</span>
+                </div>
+            </div>
+            <!-- DIVISOR VERTICAL -->
+            <div class="hero-divider"></div>
+            <!-- DIREITA: desc + botões + números -->
+            <div class="hero-right">
+                <p class="hero-desc">
+                    Desenvolvo interfaces modernas e centradas no usuário — do design ao código. Atuo com HTML, CSS, JS, Python e ferramentas no-code, sempre com foco em resultado.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projetos" class="btn-primary">ver projetos</a>
+                    <a href="https://api.whatsapp.com/send?phone=5515996916423&text=Olá! Vim pelo portfólio!" target="_blank" class="btn-ghost">WhatsApp ↗</a>
+                </div>
+                <div class="hero-numbers">
+                    <div class="hn-item">
+                        <strong id="count1">0</strong>
+                        <span>projetos entregues</span>
+                    </div>
+                    <div class="hn-div"></div>
+                    <div class="hn-item">
+                        <strong id="count2">0</strong>
+                        <span>anos de experiência</span>
+                    </div>
+                    <div class="hn-div"></div>
+                    <div class="hn-item">
+                        <strong id="count3">0</strong>
+                        <span>empresas parceiras</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- BARRA INFERIOR: marquee infinito -->
+        <div class="hero-skillbar">
+            <div class="skillbar-track">
+                <span>HTML · CSS · JavaScript</span>
+                <span class="sb-dot"></span>
+                <span>Figma · WordPress · Wix</span>
+                <span class="sb-dot"></span>
+                <span>Knob Tecnologia · Casa OPOCA</span>
+                <span class="sb-dot"></span>
+                <span>São Miguel Arcanjo, SP — Brasil</span>
+                <span class="sb-dot"></span>
+                <span>HTML · CSS · JavaScript</span>
+                <span class="sb-dot"></span>
+                <span>Figma · WordPress · Wix</span>
+                <span class="sb-dot"></span>
+                <span>Knob Tecnologia · Casa OPOCA</span>
+                <span class="sb-dot"></span>
+                <span>São Miguel Arcanjo, SP — Brasil</span>
+                <span class="sb-dot"></span>
+            </div>
+        </div>
+    </section>
+    <!-- ══════════════ PROJETOS ══════════════ -->
+    <section id="projetos">
+        <div class="sec-head reveal">
+            <h2 class="sec-title">Projetos<span class="sec-accent">_</span></h2>
+            <a href="https://github.com/oKaiquelopes" target="_blank" rel="noopener" class="sec-link">github ↗</a>
+        </div>
+        <div class="proj-list">
+            <a href="https://www.bucchinoautorale.com.br/" target="_blank" rel="noopener noreferrer" class="proj-item reveal">
+                <div class="pi-left">
+                    <span class="pi-num">01</span>
+                    <div class="pi-info">
+                        <h3>Bucchino Autorale</h3>
+                        <p>Site Institucional + Loja Virtual &mdash; Mai 2025</p>
+                    </div>
+                </div>
+                <div class="pi-right">
+                    <div class="pi-tags">
+                        <span>HTML</span><span>CSS</span><span>JS</span>
+                    </div>
+                    <svg class="pi-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 16L16 4M16 4H8M16 4v8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="https://knobtecnologia.com" target="_blank" rel="noopener noreferrer" class="proj-item reveal">
+                <div class="pi-left">
+                    <span class="pi-num">02</span>
+                    <div class="pi-info">
+                        <h3>Portal Knob Tecnologia</h3>
+                        <p>Portal Corporativo &mdash; Set 2025</p>
+                    </div>
+                </div>
+                <div class="pi-right">
+                    <div class="pi-tags">
+                        <span>UX/UI</span><span>Front-End</span>
+                    </div>
+                    <svg class="pi-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 16L16 4M16 4H8M16 4v8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="https://knobtecnologia.com/powerpro" target="_blank" rel="noopener noreferrer" class="proj-item reveal">
+                <div class="pi-left">
+                    <span class="pi-num">03</span>
+                    <div class="pi-info">
+                        <h3>PowerPro</h3>
+                        <p>Landing Page &mdash; Set 2025</p>
+                    </div>
+                </div>
+                <div class="pi-right">
+                    <div class="pi-tags">
+                        <span>HTML</span><span>No-Code</span>
+                    </div>
+                    <svg class="pi-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 16L16 4M16 4H8M16 4v8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="https://knobtecnologia.com/solar" target="_blank" rel="noopener noreferrer" class="proj-item reveal">
+                <div class="pi-left">
+                    <span class="pi-num">04</span>
+                    <div class="pi-info">
+                        <h3>Knob Solar</h3>
+                        <p>Site Institucional &mdash; Set 2025</p>
+                    </div>
+                </div>
+                <div class="pi-right">
+                    <div class="pi-tags">
+                        <span>Design</span><span>Front-End</span>
+                    </div>
+                    <svg class="pi-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 16L16 4M16 4H8M16 4v8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </a>
+            <a href="https://okaiquelopes.github.io/fotoflow/" target="_blank" rel="noopener noreferrer" class="proj-item reveal">
+                <div class="pi-left">
+                    <span class="pi-num">05</span>
+                    <div class="pi-info">
+                        <h3>FotoFlow</h3>
+                        <p>Landing Page &mdash; Jan 2026 &mdash; Freelancer</p>
+                    </div>
+                </div>
+                <div class="pi-right">
+                    <div class="pi-tags">
+                        <span>UX/UI</span><span>CSS</span>
+                    </div>
+                    <svg class="pi-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 16L16 4M16 4H8M16 4v8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </section>
+    <!-- ══════════════ SOBRE ══════════════ -->
+    <section id="about">
+        <div class="sec-head reveal">
+            <h2 class="sec-title">Sobre<span class="sec-accent">_</span></h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-photo reveal">
+                <img src="css/imgs/Kaique-8.jpg" alt="Kaique Lopes">
+                <div class="photo-corners">
+                    <span class="c tl"></span>
+                    <span class="c tr"></span>
+                    <span class="c bl"></span>
+                    <span class="c br"></span>
+                </div>
+            </div>
+            <div class="about-content reveal">
+                <h3 class="about-headline">Transformo ideias em<br><em>experiências digitais.</em></h3>
+                <p>Sou Kaique Lopes, desenvolvedor front-end com foco em programação tradicional e soluções no-code. Crio interfaces modernas, acessíveis e orientadas ao usuário — de HTML puro a WordPress e Figma.</p>
+                <p>Integro a equipe da <strong>Knob Tecnologia</strong> e sou educador na <strong>Casa OPOCA</strong>, onde formo crianças e adolescentes em tecnologia. Também ofereço suporte técnico e projetos freelancers.</p>
+                <div class="about-chips">
+                    <span>Desenvolvimento Web</span>
+                    <span>UX/UI Design</span>
+                    <span>Educação Tecnológica</span>
+                    <span>Manutenção de PCs</span>
+                </div>
+                <div class="about-actions">
+                    <a href="#budget-section" class="btn-primary">solicitar orçamento</a>
+                    <a href="https://wa.me/5515996916423" target="_blank" class="btn-ghost">WhatsApp ↗</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ══════════════ ORÇAMENTO ══════════════ -->
+    <section id="budget-section">
+        <div class="sec-head reveal">
+            <h2 class="sec-title">Orçamento<span class="sec-accent">_</span></h2>
+        </div>
+        <div class="budget-grid">
+            <div class="budget-copy reveal">
+                <h3>Vamos tirar seu<br>projeto do papel?</h3>
+                <p>Responda algumas perguntas e receba uma proposta personalizada direto no WhatsApp.</p>
+                <ul class="budget-list">
+                    <li>Resposta rápida</li>
+                    <li>Atendimento direto comigo</li>
+                    <li>Solução sob medida</li>
+                </ul>
+            </div>
+            <div class="budget-card reveal">
+                <div class="progress-wrap">
+                    <div class="progress-fill" id="progressBar"></div>
+                </div>
+                <p class="progress-label" id="progress">01 / 04</p>
+
+                <div class="step active" id="step1">
+                    <h4>O que você precisa?</h4>
+                    <div class="opts">
+                        <button class="opt" onclick="selectOption('Site','servico')">Site</button>
+                        <button class="opt" onclick="selectOption('Loja Virtual','servico')">Loja Virtual</button>
+                        <button class="opt" onclick="selectOption('Sistema','servico')">Sistema</button>
+                        <button class="opt" onclick="selectOption('Manutenção no PC','servico')">Manutenção no PC</button>
+                    </div>
+                </div>
+                <div class="step" id="step2">
+                    <h4>Pra quando você precisa?</h4>
+                    <div class="opts">
+                        <button class="opt" onclick="selectOption('Urgente','prazo')">Urgente</button>
+                        <button class="opt" onclick="selectOption('Até 30 dias','prazo')">Até 30 dias</button>
+                        <button class="opt" onclick="selectOption('Sem pressa','prazo')">Sem pressa</button>
+                    </div>
+                    <button class="btn-back" onclick="prevStep()">← voltar</button>
+                </div>
+                <div class="step" id="step3">
+                    <h4>Orçamento aproximado <em>(opcional)</em></h4>
+                    <input type="text" id="orcamento" placeholder="Ex: até R$ 1.500">
+                    <div class="form-row">
+                        <button class="btn-back" onclick="prevStep()">← voltar</button>
+                        <button class="btn-adv" onclick="nextStep()">continuar →</button>
+                    </div>
+                </div>
+                <div class="step" id="step4">
+                    <h4>Seus dados</h4>
+                    <input type="text" id="nome" placeholder="Seu nome">
+                    <input type="text" id="contato" placeholder="WhatsApp ou Email">
+                    <textarea id="detalhes" placeholder="Detalhe seu projeto..."></textarea>
+                    <div class="form-row">
+                        <button class="btn-back" onclick="prevStep()">← voltar</button>
+                        <button class="btn-send" onclick="enviarWhats()">Enviar no WhatsApp ↗</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ══════════════ FOOTER ══════════════ -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-headline">
+                <span class="fh-small">pronto pra trabalhar junto?</span>
+                <h2>LET'S WORK<br><span>TOGETHER.</span></h2>
+            </div>
+            <div class="footer-right">
+                <div class="footer-links-group">
+                    <span class="flg-label">contato</span>
+                    <a href="/cdn-cgi/l/email-protection#7f19141e160e0a1a13100f1a0c3f18121e1613511c1012" class="fc-link"><span class="__cf_email__" data-cfemail="d7b1bcb6bea6a2b2bbb8a7b2a497b0bab6bebbf9b4b8ba">kaiquelopes.dev@gmail.com</span></a>
+                    <a href="https://api.whatsapp.com/send?phone=5515996916423" target="_blank" class="fc-link">WhatsApp</a>
+                </div>
+                <div class="footer-links-group">
+                    <span class="flg-label">redes</span>
+                    <a href="https://www.linkedin.com/in/kaique-lopes-779450263/" target="_blank" class="fc-link">LinkedIn</a>
+                    <a href="https://www.behance.net/kaiquelopes6" target="_blank" class="fc-link">Behance</a>
+                    <a href="https://github.com/oKaiquelopes" target="_blank" class="fc-link">GitHub</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Lopes Tecnologia.</span>
+            <span>Desenvolvido com ☕ & 💛.</span>
+        </div>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
