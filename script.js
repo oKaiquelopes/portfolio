@@ -1,8 +1,15 @@
 window.addEventListener('DOMContentLoaded', () => {
-    // HEADER SCROLL
-    window.addEventListener('scroll', () => {
-        document.getElementById('header').classList.toggle('scrolled', window.scrollY > 40);
-    });
+    // HEADER SCROLL + BARRA DE PROGRESSO
+    const header = document.getElementById('header');
+    const scrollBar = document.getElementById('scrollProgress');
+    function onScroll() {
+        header.classList.toggle('scrolled', window.scrollY > 40);
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const pct = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+        if (scrollBar) scrollBar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
 
     // HAMBURGER
     const hamburger = document.getElementById('hamburger');
@@ -21,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', closeMenu);
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
-    // REVEAL ON SCROLL
+    // REVEAL ON SCROLL (também controla a linha do processo, via .reveal.active)
     const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => {
             if (e.isIntersecting) {
@@ -29,11 +36,43 @@ window.addEventListener('DOMContentLoaded', () => {
                 obs.unobserve(e.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.15 });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // COUNTER ANIMATION — dispara quando os números entram na tela
+    const counters = [
+        { el: document.getElementById('count1'), target: 20, suffix: '+' },
+        { el: document.getElementById('count2'), target: 3,  suffix: '+' },
+        { el: document.getElementById('count3'), target: 5,  suffix: ''  }
+    ];
+    function animateCount(el, target, suffix, duration) {
+        const start = performance.now();
+        function tick(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(eased * target) + suffix;
+            if (progress < 1) requestAnimationFrame(tick);
+            else el.textContent = target + suffix;
+        }
+        requestAnimationFrame(tick);
+    }
+    const numbersEl = document.querySelector('.hero-numbers');
+    if (numbersEl) {
+        const numObs = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    counters.forEach((c, i) => {
+                        if (c.el) setTimeout(() => animateCount(c.el, c.target, c.suffix, 1300), i * 200);
+                    });
+                    numObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+        numObs.observe(numbersEl);
+    }
 });
 
-// FORM — global so onclick="" works
+// FORM — global para os onclick="" funcionarem
 let current = 1;
 const data = { servico:'', prazo:'', orcamento:'', nome:'', contato:'', detalhes:'' };
 const labels = ['01 / 04','02 / 04','03 / 04','04 / 04'];
@@ -54,9 +93,9 @@ function prevStep() {
     document.getElementById('step' + current).classList.add('active');
     updateProgress();
 }
-function selectOption(valor, tipo) {
+function selectOption(el, valor, tipo) {
     data[tipo] = valor;
-    event.currentTarget.classList.add('chosen');
+    el.classList.add('chosen');
     setTimeout(nextStep, 280);
 }
 function enviarWhats() {
@@ -67,59 +106,3 @@ function enviarWhats() {
     const msg = '*Orçamento via Portfólio*\n\nServiço: ' + data.servico + '\nPrazo: ' + data.prazo + '\nOrçamento: ' + (data.orcamento || 'Não informado') + '\nNome: ' + data.nome + '\nContato: ' + data.contato + '\nDetalhes: ' + data.detalhes;
     window.open('https://api.whatsapp.com/send?phone=5515996916423&text=' + encodeURIComponent(msg), '_blank');
 }
-
-
-// COUNTER ANIMATION
-function animateCount(el, target, suffix, duration) {
-    let start = 0;
-    const step = target / (duration / 16);
-    const timer = setInterval(() => {
-        start += step;
-        if (start >= target) {
-            el.textContent = target + suffix;
-            clearInterval(timer);
-        } else {
-            el.textContent = Math.floor(start) + suffix;
-        }
-    }, 16);
-}
-
-// Dispara quando a página carrega
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        animateCount(document.getElementById('count1'), 20, '+', 1200);
-        animateCount(document.getElementById('count2'), 3, '+', 900);
-        animateCount(document.getElementById('count3'), 5, '', 800);
-    }, 600);
-});
-
-    // COUNTER ANIMATION — lento, um de cada vez
-    function animateCount(el, target, suffix, duration, onDone) {
-        let start = 0;
-        const interval = duration / target;
-        const timer = setInterval(() => {
-            start += 1;
-            el.textContent = start + suffix;
-            if (start >= target) {
-                clearInterval(timer);
-                if (onDone) onDone();
-            }
-        }, interval);
-    }
-
-    // Cada número começa só depois que o anterior termina
-    setTimeout(() => {
-        const c1 = document.getElementById('count1');
-        const c2 = document.getElementById('count2');
-        const c3 = document.getElementById('count3');
-
-        animateCount(c1, 20, '+', 2000, () => {
-            setTimeout(() => {
-                animateCount(c2, 3, '+', 1800, () => {
-                    setTimeout(() => {
-                        animateCount(c3, 5, '', 1500);
-                    }, 400);
-                });
-            }, 400);
-        });
-    }, 800);

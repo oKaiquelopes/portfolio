@@ -12,6 +12,8 @@
 </head>
 <body>
     <div class="noise"></div>
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- HEADER -->
     <header id="header">
         <a href="#home" class="logo-wrap">
@@ -19,6 +21,7 @@
         </a>
         <nav class="nav-desktop">
             <a href="#projetos">projetos</a>
+            <a href="#processo">processo</a>
             <a href="#about">sobre</a>
             <a href="#budget-section">orçamento</a>
             <a href="https://api.whatsapp.com/send?phone=5515996916423&text=Olá! Vim pelo portfólio!" target="_blank" class="nav-cta">→ contato</a>
@@ -30,6 +33,7 @@
 
     <nav class="menu-mobile" id="menuMobile">
         <a href="#projetos">projetos</a>
+        <a href="#processo">processo</a>
         <a href="#about">sobre</a>
         <a href="#budget-section">orçamento</a>
         <a href="https://api.whatsapp.com/send?phone=5515996916423&text=Olá! Vim pelo portfólio!" target="_blank">contato</a>
@@ -107,6 +111,7 @@
             </div>
         </div>
     </section>
+
     <!-- ══════════════ PROJETOS ══════════════ -->
     <section id="projetos">
         <div class="sec-head reveal">
@@ -132,7 +137,7 @@
                 </div>
             </a>
 
-                <a href="https://https://dancadivina.com.br/" target="_blank" rel="noopener noreferrer" class="proj-item reveal">
+            <a href="https://dancadivina.com.br/" target="_blank" rel="noopener noreferrer" class="proj-item reveal">
                 <div class="pi-left">
                     <span class="pi-num">02</span>
                     <div class="pi-info">
@@ -154,7 +159,7 @@
                 <div class="pi-left">
                     <span class="pi-num">03</span>
                     <div class="pi-info">
-                        <h3>Psíco. Dr. Marina Alves</h3>
+                        <h3>Psic. Dr. Marina Alves</h3>
                         <p>Site Institucional &mdash; Jan 2026</p>
                     </div>
                 </div>
@@ -173,7 +178,7 @@
                     <span class="pi-num">04</span>
                     <div class="pi-info">
                         <h3>LR Sonorização</h3>
-                        <p>Landing Page &mdash; JUN 2026</p>
+                        <p>Landing Page &mdash; Jun 2026</p>
                     </div>
                 </div>
                 <div class="pi-right">
@@ -185,6 +190,7 @@
                     </svg>
                 </div>
             </a>
+
             <a href="https://knobtecnologia.com/powerpro" target="_blank" rel="noopener noreferrer" class="proj-item reveal">
                 <div class="pi-left">
                     <span class="pi-num">05</span>
@@ -221,6 +227,39 @@
             </a>
         </div>
     </section>
+
+    <!-- ══════════════ PROCESSO ══════════════ -->
+    <section id="processo">
+        <div class="sec-head reveal">
+            <h2 class="sec-title">Processo<span class="sec-accent">_</span></h2>
+        </div>
+        <div class="process-line-wrap reveal">
+            <div class="process-line"></div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <span class="ps-num">01</span>
+                    <h3>Descoberta</h3>
+                    <p>Entendo o projeto, o público e os objetivos antes de escrever qualquer linha de código.</p>
+                </div>
+                <div class="process-step">
+                    <span class="ps-num">02</span>
+                    <h3>Design</h3>
+                    <p>Defino wireframes e direção visual alinhados com a identidade da marca.</p>
+                </div>
+                <div class="process-step">
+                    <span class="ps-num">03</span>
+                    <h3>Desenvolvimento</h3>
+                    <p>Código limpo em HTML, CSS e JavaScript, testado em todos os dispositivos.</p>
+                </div>
+                <div class="process-step">
+                    <span class="ps-num">04</span>
+                    <h3>Entrega &amp; Suporte</h3>
+                    <p>Deploy, ajustes finos e acompanhamento direto comigo após o lançamento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ══════════════ SOBRE ══════════════ -->
     <section id="about">
         <div class="sec-head reveal">
@@ -253,6 +292,7 @@
             </div>
         </div>
     </section>
+
     <!-- ══════════════ ORÇAMENTO ══════════════ -->
     <section id="budget-section">
         <div class="sec-head reveal">
@@ -277,18 +317,18 @@
                 <div class="step active" id="step1">
                     <h4>O que você precisa?</h4>
                     <div class="opts">
-                        <button class="opt" onclick="selectOption('Site','servico')">Site</button>
-                        <button class="opt" onclick="selectOption('Loja Virtual','servico')">Loja Virtual</button>
-                        <button class="opt" onclick="selectOption('Sistema','servico')">Sistema</button>
-                        <button class="opt" onclick="selectOption('Manutenção de Hardware','servico')">Manutenção de Hardware</button>
+                        <button class="opt" onclick="selectOption(this,'Site','servico')">Site</button>
+                        <button class="opt" onclick="selectOption(this,'Loja Virtual','servico')">Loja Virtual</button>
+                        <button class="opt" onclick="selectOption(this,'Sistema','servico')">Sistema</button>
+                        <button class="opt" onclick="selectOption(this,'Manutenção de Hardware','servico')">Manutenção de Hardware</button>
                     </div>
                 </div>
                 <div class="step" id="step2">
                     <h4>Pra quando você precisa?</h4>
                     <div class="opts">
-                        <button class="opt" onclick="selectOption('Urgente','prazo')">Urgente</button>
-                        <button class="opt" onclick="selectOption('Até 30 dias','prazo')">Até 30 dias</button>
-                        <button class="opt" onclick="selectOption('Sem pressa','prazo')">Sem pressa</button>
+                        <button class="opt" onclick="selectOption(this,'Urgente','prazo')">Urgente</button>
+                        <button class="opt" onclick="selectOption(this,'Até 30 dias','prazo')">Até 30 dias</button>
+                        <button class="opt" onclick="selectOption(this,'Sem pressa','prazo')">Sem pressa</button>
                     </div>
                     <button class="btn-back" onclick="prevStep()">← voltar</button>
                 </div>
@@ -313,6 +353,7 @@
             </div>
         </div>
     </section>
+
     <!-- ══════════════ FOOTER ══════════════ -->
     <footer>
         <div class="footer-inner">
