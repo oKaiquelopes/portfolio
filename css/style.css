@@ -731,15 +731,54 @@ section:not(#home) {
 .c.bl { bottom: -5px; left: -5px; border-bottom: 1.5px solid var(--amber); border-left: 1.5px solid var(--amber); }
 .c.br { bottom: -5px; right: -5px; border-bottom: 1.5px solid var(--amber); border-right: 1.5px solid var(--amber); }
 
+.about-eyebrow {
+    display: block;
+    font-family: var(--fm);
+    font-size: 0.68rem;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 14px;
+}
+
 .about-headline {
     font-family: var(--fd);
-    font-size: clamp(2.2rem, 4vw, 3.6rem);
-    letter-spacing: 2px;
-    line-height: 0.94;
+    font-size: clamp(1.9rem, 3.4vw, 3.1rem);
+    letter-spacing: 1.5px;
+    line-height: 1.06;
     color: var(--white);
     margin-bottom: 26px;
 }
 .about-headline em { font-style: normal; color: var(--amber); }
+
+.about-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--dim);
+    margin: 30px 0 34px;
+}
+.about-list-item {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--dim);
+    font-family: var(--fb);
+    font-weight: 300;
+    font-size: 0.86rem;
+    color: var(--white);
+    transition: padding-left 0.25s ease;
+}
+.about-list-item:hover { padding-left: 8px; }
+.ali-num {
+    font-family: var(--fm);
+    font-size: 0.65rem;
+    color: var(--amber);
+    opacity: 0.85;
+    flex-shrink: 0;
+    min-width: 20px;
+}
 
 .about-content p {
     font-family: var(--fb);
@@ -751,24 +790,62 @@ section:not(#home) {
 }
 .about-content strong { color: var(--white); font-weight: 500; }
 
-.about-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 26px 0 32px;
-}
-.about-chips span {
-    font-family: var(--fm);
-    font-size: 0.65rem;
-    color: var(--muted);
-    border: 1px solid var(--dim);
-    padding: 6px 14px;
-    letter-spacing: 0.04em;
-    transition: border-color 0.2s, color 0.2s;
-}
-.about-chips span:hover { border-color: rgba(232,160,62,0.4); color: var(--white); }
-
 .about-actions { display: flex; align-items: center; gap: 20px; }
+
+/* ══════════════════════════════════════
+   FAQ
+══════════════════════════════════════ */
+#faq { background: var(--bg2); border-top: 1px solid var(--dim); border-bottom: 1px solid var(--dim); }
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+}
+.faq-item {
+    border-bottom: 1px solid var(--dim);
+}
+.faq-q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 24px 0;
+    cursor: pointer;
+    font-family: var(--fb);
+    font-weight: 400;
+    font-size: clamp(0.92rem, 1.6vw, 1.1rem);
+    color: var(--white);
+    transition: color 0.2s;
+}
+.faq-q:hover { color: var(--amber); }
+.faq-icon {
+    font-family: var(--fm);
+    font-size: 1.1rem;
+    color: var(--amber);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+    width: auto;
+}
+.faq-item.open .faq-icon { transform: rotate(135deg); }
+
+.faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+.faq-a p {
+    font-family: var(--fb);
+    font-weight: 300;
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 62ch;
+    padding-bottom: 24px;
+}
 
 /* ══════════════════════════════════════
    ORÇAMENTO
@@ -787,6 +864,17 @@ section:not(#home) {
     padding-right: 60px;
     max-width: 1280px;
     margin: 0 auto;
+}
+
+.budget-eyebrow {
+    display: block;
+    font-family: var(--fm);
+    font-size: 0.68rem;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 14px;
 }
 
 .budget-copy h3 {
@@ -820,6 +908,20 @@ section:not(#home) {
     gap: 10px;
 }
 .budget-list li::before { content: '—'; color: var(--amber); font-size: 0.6rem; }
+
+.budget-note {
+    font-family: var(--fb);
+    font-style: italic;
+    font-weight: 300;
+    font-size: 0.86rem;
+    color: var(--white);
+    opacity: 0.85;
+    border-left: 2px solid var(--amber);
+    padding: 4px 0 4px 18px;
+    margin-top: 28px;
+    max-width: 42ch;
+    line-height: 1.6;
+}
 
 /* card form */
 .budget-card {
@@ -1085,6 +1187,9 @@ footer {
     .hn-item:first-child { padding-left: 0; }
 
     .pi-tags { display: none; }
+
+    .faq-q { padding: 20px 0; gap: 12px; }
+    .faq-a p { padding-bottom: 20px; }
 
     .process-steps { grid-template-columns: 1fr; gap: 30px; }
 
