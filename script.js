@@ -28,6 +28,26 @@ window.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', closeMenu);
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
+    // ACORDEÃO DO FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const btn = item.querySelector('.faq-q');
+        const answer = item.querySelector('.faq-a');
+        btn.addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+            faqItems.forEach(other => {
+                other.classList.remove('open');
+                other.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+                other.querySelector('.faq-a').style.maxHeight = null;
+            });
+            if (!isOpen) {
+                item.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+
     // REVEAL ON SCROLL (também controla a linha do processo, via .reveal.active)
     const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => {
