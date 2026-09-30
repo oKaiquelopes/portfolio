@@ -30,7 +30,14 @@
             <a href="#testimonials">depoimentos</a>
             <a href="#budget-section">orçamento</a>
             <a href="https://api.whatsapp.com/send?phone=5515996916423&text=Olá! Vim pelo portfólio!" target="_blank" class="nav-cta">→ contato</a>
+                        <button type="button" class="cmdk-trigger" data-cmdk-open aria-haspopup="dialog" aria-label="Abrir paleta de comandos">
+                <svg width="12" height="12" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.6"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                <span class="cmdk-keys">Ctrl K</span>
+            </button>
         </nav>
+        <button type="button" class="cmdk-trigger cmdk-trigger-m" data-cmdk-open aria-haspopup="dialog" aria-label="Abrir paleta de comandos">
+            <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.6"/><path d="M13 13l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
         <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span><span></span>
         </button>
@@ -613,6 +620,25 @@
             <span>Desenvolvido com ☕ & 💛.</span>
         </div>
     </footer>
+
+    <!-- ══════════════ PALETA DE COMANDOS (Ctrl/⌘ + K) ══════════════ -->
+    <div class="cmdk" id="cmdk" aria-hidden="true">
+        <div class="cmdk-backdrop" data-cmdk-close></div>
+        <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Paleta de comandos">
+            <div class="cmdk-search">
+                <span class="cmdk-prompt" aria-hidden="true">›</span>
+                <input id="cmdkInput" class="cmdk-input" type="text" placeholder="o que você procura?" autocomplete="off" autocapitalize="off" spellcheck="false" role="combobox" aria-expanded="true" aria-controls="cmdkList" aria-autocomplete="list" aria-label="Buscar comando">
+                <button type="button" class="cmdk-esc" data-cmdk-close tabindex="-1" aria-label="Fechar">esc</button>
+            </div>
+            <div class="cmdk-list" id="cmdkList" role="listbox" aria-label="Comandos"></div>
+            <div class="cmdk-foot" aria-hidden="true">
+                <span><kbd>↑</kbd> <kbd>↓</kbd> navegar</span>
+                <span><kbd>↵</kbd> selecionar</span>
+                <span><kbd>esc</kbd> fechar</span>
+            </div>
+        </div>
+    </div>
+    <div class="cmdk-toast" id="cmdkToast" role="status" aria-live="polite"></div>
 
     <a href="https://wa.me/5515996916423?text=Olá! Vim pelo portfólio!" target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Falar no WhatsApp">
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
