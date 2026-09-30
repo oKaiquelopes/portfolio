@@ -473,6 +473,63 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .btn-ghost:hover { color: var(--white); border-color: var(--muted); }
 
+/* ── BOTÃO CV (download) ── */
+.btn-cv {
+    position: relative;
+    isolation: isolate;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--fm);
+    font-size: 0.76rem;
+    letter-spacing: 0.04em;
+    color: var(--white);
+    text-decoration: none;
+    padding: 11px 16px 11px 15px;
+    border: 1px solid rgba(232,160,62,0.32);
+    overflow: hidden;
+    white-space: nowrap;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+/* preenchimento âmbar que varre da esquerda */
+.btn-cv::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: var(--amberD);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.btn-cv .cv-icon { color: var(--amber); flex-shrink: 0; overflow: visible; }
+.btn-cv .cv-meta {
+    font-size: 0.6rem;
+    color: var(--muted);
+    padding-left: 10px;
+    border-left: 1px solid var(--dim);
+    transition: color 0.3s, border-color 0.3s;
+}
+.btn-cv:hover,
+.btn-cv:focus-visible {
+    border-color: var(--amber);
+    box-shadow: 0 0 28px rgba(232,160,62,0.12);
+}
+.btn-cv:hover::before,
+.btn-cv:focus-visible::before { transform: scaleX(1); }
+.btn-cv:hover .cv-meta,
+.btn-cv:focus-visible .cv-meta { color: var(--amber); border-color: rgba(232,160,62,0.35); }
+.btn-cv:hover .cv-arrow,
+.btn-cv:focus-visible .cv-arrow { animation: cvBob 0.9s ease-in-out infinite; }
+.btn-cv:active { transform: translateY(1px); }
+@keyframes cvBob {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(2.5px); }
+}
+/* estado pós-clique */
+.btn-cv.is-done { border-color: var(--amber); }
+.btn-cv.is-done .cv-label { color: var(--amber); }
+
 /* ══════════════════════════════════════
    SEÇÃO — cabeçalho padrão
 ══════════════════════════════════════ */
@@ -1317,6 +1374,10 @@ footer {
     #home { min-height: 100svh; }
     #home::before { display: none; }
     .hero-body { padding: 90px 24px 36px; }
+    .hero-actions { flex-wrap: wrap; gap: 14px 16px; }
+    .hero-actions .btn-primary,
+    .hero-actions .btn-cv { flex: 1 1 calc(50% - 8px); justify-content: center; }
+    .btn-cv .cv-meta { display: none; }
     .hn-ola { font-size: 0.68rem; }
     .hn-kaique, .hn-lopes { font-size: clamp(2.8rem, 13vw, 5rem); letter-spacing: 2px; }
     .hero-skillbar { padding: 10px 0; }
