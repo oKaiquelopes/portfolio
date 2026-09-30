@@ -28,6 +28,25 @@ window.addEventListener('DOMContentLoaded', () => {
     overlay.addEventListener('click', closeMenu);
     menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 
+    // BOTÃO CV — feedback visual ao baixar (o download em si é nativo via atributo download)
+    const btnCv = document.getElementById('btnCv');
+    if (btnCv) {
+        const cvLabel = btnCv.querySelector('.cv-label');
+        let cvTimer;
+        btnCv.addEventListener('click', () => {
+            clearTimeout(cvTimer);
+            cvLabel.textContent = 'baixando…';
+            cvTimer = setTimeout(() => {
+                btnCv.classList.add('is-done');
+                cvLabel.textContent = 'baixado ✓';
+                cvTimer = setTimeout(() => {
+                    btnCv.classList.remove('is-done');
+                    cvLabel.textContent = cvLabel.dataset.default;
+                }, 2600);
+            }, 900);
+        });
+    }
+
     // ACORDEÃO DO FAQ
     const faqItems = document.querySelectorAll('.faq-item');
     faqItems.forEach(item => {
@@ -65,7 +84,7 @@ window.addEventListener('DOMContentLoaded', () => {
         { el: document.getElementById('count2'), target: 3,  suffix: '+' },
         { el: document.getElementById('count3'), target: 5,  suffix: ''  }
     ];
-    function animateCount(el, target, suffix, duration) {
+    function animateCount(el, target, suffix, duration) {   
         const start = performance.now();
         function tick(now) {
             const progress = Math.min((now - start) / duration, 1);
