@@ -1139,9 +1139,9 @@ section:not(#home) {
     width: 22px; height: 22px;
 }
 .c.tl { top: -5px; left: -5px; border-top: 1.5px solid var(--amber); border-left: 1.5px solid var(--amber); }
-.c.tr { top: -5px; right: -5px; border-top: 1.5px solid var(--amber); border-right: 1.5px solid var(--amber); }
+.c.tr { top: -5px; right: 15px; border-top: 1.5px solid var(--amber); border-right: 1.5px solid var(--amber); }
 .c.bl { bottom: -5px; left: -5px; border-bottom: 1.5px solid var(--amber); border-left: 1.5px solid var(--amber); }
-.c.br { bottom: -5px; right: -5px; border-bottom: 1.5px solid var(--amber); border-right: 1.5px solid var(--amber); }
+.c.br { bottom: -5px; right: 15px; border-bottom: 1.5px solid var(--amber); border-right: 1.5px solid var(--amber); }
 
 .about-eyebrow {
     display: block;
