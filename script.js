@@ -52,6 +52,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const jump = sel => { const el = document.querySelector(sel); if (el) el.scrollIntoView({ behavior: 'smooth' }); };
     const cards = [...document.querySelectorAll('.proj-card')].map(a => ({
         href: a.href,
+        id: a.dataset.project,
         n: a.querySelector('.pc-eyebrow span').textContent,
         kind: a.querySelector('.pc-eyebrow').lastChild.textContent.trim(),
         date: a.querySelector('.pc-date').textContent,
@@ -74,7 +75,7 @@ window.addEventListener('DOMContentLoaded', () => {
         cards.forEach(c => {
             const a = document.createElement('a');
             a.className = 'pl-row'; a.href = c.href; a.target = '_blank'; a.rel = 'noopener noreferrer';
-            a.dataset.img = c.img;
+            a.dataset.img = c.img; a.dataset.project = c.id;
             [['pl-n', c.n], ['pl-t', c.title], ['pl-k', c.kind], ['pl-d', c.date], ['pl-a', '↗']].forEach(([cls, txt]) => {
                 const s = document.createElement('span'); s.className = cls; s.textContent = txt; a.appendChild(s);
             });
@@ -114,6 +115,138 @@ window.addEventListener('DOMContentLoaded', () => {
         });
         listEl.addEventListener('mouseleave', () => prev.classList.remove('show'));
     }
+
+    // ═══ MODAL DE PROJETO ═══
+    // Edite os textos aqui. O link do botão "ver projeto no ar" vem do href do card no HTML.
+    const PROJECTS = {
+        bucchino: {
+            tagline: 'Site institucional e loja virtual reunidos em um só endereço.',
+            about: 'Desenvolvimento do site da Bucchino Autorale, do layout ao código. Uma apresentação institucional da marca integrada a uma loja virtual, pensada para funcionar bem em qualquer tela.',
+            explored: [
+                'Layout responsivo construído primeiro para o celular.',
+                'Identidade visual da marca traduzida em tipografia, cores e hierarquia.',
+                'Estrutura de loja virtual integrada ao site institucional.',
+                'HTML, CSS e JavaScript puros, sem frameworks.'
+            ],
+            tags: ['HTML', 'CSS', 'JavaScript', 'Loja virtual', 'Mobile-first']
+        },
+        dancadivina: {
+            tagline: 'Uma página feita para apresentar e lançar cursos com clareza.',
+            about: 'Landing page de lançamento de cursos para o programa Dança Divina Integrativa. O foco foi traduzir o trabalho em palavras e imagens e conduzir a pessoa até a ação.',
+            explored: [
+                'Narrativa da página pensada para o lançamento de cursos.',
+                'Tipografia e ritmo de leitura alinhados ao tom do projeto.',
+                'Chamadas para ação claras ao longo de toda a página.',
+                'Layout responsivo e leve, com HTML, CSS e JavaScript puros.'
+            ],
+            tags: ['HTML', 'CSS', 'JavaScript', 'Landing page', 'Mobile-first']
+        },
+        gustavocollins: {
+            tagline: 'Um portfólio que deixa a fotografia ser a protagonista.',
+            about: 'Site-portfólio para o fotógrafo Gustavo Collins. A interface foi desenhada para dar espaço às imagens e manter a navegação simples, sem competir com o trabalho exibido.',
+            explored: [
+                'Galeria e grade de imagens responsivas.',
+                'Carregamento otimizado para páginas com muitas fotos.',
+                'Interface discreta que valoriza o conteúdo visual.',
+                'HTML, CSS e JavaScript puros, sem frameworks.'
+            ],
+            tags: ['HTML', 'CSS', 'JavaScript', 'Portfólio', 'Mobile-first']
+        },
+        lrsonorizacao: {
+            tagline: 'Uma landing page direta para apresentar o serviço e gerar contato.',
+            about: 'Landing page da LR Sonorização, criada para apresentar a empresa e facilitar o contato. Estrutura enxuta, carregamento rápido e leitura fácil no celular.',
+            explored: [
+                'Estrutura enxuta, focada em apresentar o serviço e facilitar o contato.',
+                'Layout mobile-first com leitura confortável em telas pequenas.',
+                'Identidade visual coerente com o segmento.',
+                'HTML, CSS e JavaScript puros, com foco em desempenho.'
+            ],
+            tags: ['HTML', 'CSS', 'JavaScript', 'Landing page', 'Mobile-first']
+        },
+        powerpro: {
+            tagline: 'Uma landing page para apresentar a plataforma com objetividade.',
+            about: 'Landing page do PowerPro, produto da Knob Tecnologia. O objetivo foi explicar a proposta da plataforma de forma clara e organizada, em uma única página.',
+            explored: [
+                'Organização do conteúdo para explicar um produto digital.',
+                'Hierarquia visual que guia a leitura do início ao fim.',
+                'Layout responsivo, pensado primeiro para o celular.',
+                'HTML, CSS e JavaScript puros, sem frameworks.'
+            ],
+            tags: ['HTML', 'CSS', 'JavaScript', 'Landing page', 'Mobile-first']
+        },
+        knobsolar: {
+            tagline: 'A presença institucional da Knob Solar na web.',
+            about: 'Site institucional da Knob Solar, desenvolvido para apresentar a empresa e seus serviços. Estrutura clara, visual consistente com a marca e boa experiência em qualquer dispositivo.',
+            explored: [
+                'Estrutura institucional clara, com navegação simples.',
+                'Visual consistente com a identidade da marca.',
+                'Layout responsivo, pensado primeiro para o celular.',
+                'HTML, CSS e JavaScript puros, com foco em desempenho.'
+            ],
+            tags: ['HTML', 'CSS', 'JavaScript', 'Institucional', 'Mobile-first']
+        }
+    };
+
+    const pm = document.getElementById('projModal');
+    const pmOK = !!pm && typeof pm.showModal === 'function';
+    let pmLast = null, pmTimer = 0, pmDownOnBackdrop = false;
+
+    const pmFill = (c, d) => {
+        const $ = id => document.getElementById(id);
+        $('pmEyebrow').textContent = c.kind + ' · ' + c.date;
+        $('pmTitle').textContent = c.title;
+        $('pmTagline').textContent = d.tagline;
+        $('pmAbout').textContent = d.about;
+        const list = $('pmList'), tags = $('pmTags');
+        list.replaceChildren(); tags.replaceChildren();
+        d.explored.forEach(t => { const li = document.createElement('li'); li.textContent = t; list.appendChild(li); });
+        d.tags.forEach(t => { const li = document.createElement('li'); li.className = 'pm-tag'; li.textContent = t; tags.appendChild(li); });
+        $('pmCta').href = c.href;
+        pm.querySelector('.pm-scroll').scrollTop = 0;
+    };
+
+    function openProject(id) {
+        const c = cards.find(x => x.id === id), d = PROJECTS[id];
+        if (!c) return;
+        if (!pmOK || !d) { window.open(c.href, '_blank', 'noopener'); return; } // sem suporte/sem texto: abre o site direto
+        clearTimeout(pmTimer);
+        pm.classList.remove('is-closing');
+        pmFill(c, d);
+        pmLast = document.activeElement;
+        if (!pm.open) pm.showModal();
+        root$.classList.add('pm-lock');
+    }
+
+    function closeProject(now) {
+        if (!pmOK || !pm.open) return;
+        clearTimeout(pmTimer);
+        if (now) { pm.classList.remove('is-closing'); pm.close(); return; }
+        if (pm.classList.contains('is-closing')) return;
+        pm.classList.add('is-closing');
+        pmTimer = setTimeout(() => { pm.classList.remove('is-closing'); pm.close(); }, 200);
+    }
+    window.__closeProject = () => closeProject(true);
+
+    if (pmOK) {
+        pm.addEventListener('close', () => {
+            root$.classList.remove('pm-lock');
+            if (pmLast && typeof pmLast.focus === 'function') pmLast.focus({ preventScroll: true });
+        });
+        pm.addEventListener('cancel', e => { e.preventDefault(); closeProject(); }); // Esc com animação
+        pm.addEventListener('pointerdown', e => { pmDownOnBackdrop = e.target === pm; });
+        pm.addEventListener('click', e => {
+            if (e.target.closest('[data-pm-close]') || (e.target === pm && pmDownOnBackdrop)) closeProject();
+        });
+    }
+
+    // clique no card (grade) ou na linha (lista) abre o modal; ctrl/cmd/shift/botão do meio seguem o link normal
+    document.addEventListener('click', e => {
+        if (!pmOK || e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        const a = e.target.closest('.proj-card, .pl-row');
+        if (!a || !a.dataset.project || !PROJECTS[a.dataset.project]) return;
+        e.preventDefault();
+        openProject(a.dataset.project);
+    });
 
     // Este site em números (Performance API)
     const stat = k => document.querySelector('[data-stat="' + k + '"]');
@@ -181,8 +314,8 @@ window.addEventListener('DOMContentLoaded', () => {
     // Comandos extras para a paleta
     const openNew = u => window.open(u, '_blank', 'noopener');
     window.__cmdkExtra = () => [
-        ...cards.map(c => ({ g: 'projetos', icon: c.n, label: c.title, hint: c.kind, kw: 'projeto case ' + c.kind + ' ' + c.date, run: () => openNew(c.href) })),
-        { g: 'projetos', icon: '?', label: 'Projeto aleatório', hint: 'surpreenda-me', kw: 'random sorte acaso', run: () => openNew(cards[Math.floor(Math.random() * cards.length)].href) },
+        ...cards.map(c => ({ g: 'projetos', icon: c.n, label: c.title, hint: c.kind, kw: 'projeto case ' + c.kind + ' ' + c.date, run: () => openProject(c.id) })),
+        { g: 'projetos', icon: '?', label: 'Projeto aleatório', hint: 'surpreenda-me', kw: 'random sorte acaso', run: () => openProject(cards[Math.floor(Math.random() * cards.length)].id) },
         { g: 'projetos', icon: '≡', label: 'Ver projetos em lista', hint: 'índice', kw: 'lista grade visualizacao indice', run: () => { setView('list'); jump('#projetos'); } },
         { g: 'projetos', icon: '▦', label: 'Ver projetos em grade', hint: 'cards', kw: 'grade cards visualizacao', run: () => { setView('grid'); jump('#projetos'); } },
         { g: 'sistema', icon: '◐', label: 'Trocar tema', hint: 'escuro / papel', kw: 'tema claro escuro dark light papel cor', run: toggleTheme },
@@ -194,7 +327,7 @@ window.addEventListener('DOMContentLoaded', () => {
     let gAt = 0;
     const gMap = { p: '#projetos', r: '#processo', s: '#about', f: '#faq', d: '#testimonials', o: '#budget-section', n: '#siteStats' };
     document.addEventListener('keydown', e => {
-        if (e.metaKey || e.ctrlKey || e.altKey || (e.target.closest && e.target.closest('input,textarea,select,[contenteditable],.cmdk'))) return;
+        if (e.metaKey || e.ctrlKey || e.altKey || (e.target.closest && e.target.closest('input,textarea,select,[contenteditable],.cmdk,.pm'))) return;
         const k = e.key.toLowerCase();
         if (gAt && Date.now() - gAt < 900 && gMap[k]) { e.preventDefault(); jump(gMap[k]); gAt = 0; return; }
         gAt = k === 'g' ? Date.now() : 0;
@@ -371,6 +504,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
         function openPalette() {
             if (isOpen()) return;
+            if (window.__closeProject) window.__closeProject();
             lastFocus = document.activeElement;
             closeMenu();                       // fecha o menu mobile, se estiver aberto
             input.value = '';
