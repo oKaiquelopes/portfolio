@@ -1965,3 +1965,187 @@ html.theme-fade, html.theme-fade *, html.theme-fade *::before, html.theme-fade *
     .ss-grid { grid-template-columns:repeat(5,1fr); }
     .ss-item:last-child { grid-column:auto; }
 }
+
+/* ═══ MODAL DE PROJETO (mobile-first) ═══
+   <dialog> nativo: foco preso, Esc e fundo inerte de graça. Raio do cartão em --pm-radius. */
+html.pm-lock { overflow: hidden; scrollbar-gutter: stable; }
+
+.pm {
+    --pm-radius: 12px;
+    /* o reset global zera margin; dialog precisa de auto pra ficar centralizado */
+    margin: auto;
+    padding: 0;
+    width: calc(100% - 24px);
+    max-width: 760px;
+    background: var(--bg2);
+    color: var(--white);
+    border: 1px solid var(--dim);
+    border-radius: var(--pm-radius);
+    box-shadow: var(--shadow-panel);
+    overflow: hidden;
+}
+.pm:focus-visible { outline: none; }
+/* fio âmbar no topo, igual ao da paleta de comandos */
+.pm::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    z-index: 1;
+    background: linear-gradient(90deg, var(--amber), rgba(232,160,62,0) 65%);
+}
+
+/* fundo da página: escurece + desfoca (valores literais: ::backdrop não herda variáveis em navegadores antigos) */
+.pm::backdrop {
+    background: rgba(8, 9, 10, 0.62);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+html[data-theme="paper"] .pm::backdrop { background: rgba(241, 236, 226, 0.58); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .pm::backdrop { background: rgba(8, 9, 10, 0.9); }
+    html[data-theme="paper"] .pm::backdrop { background: rgba(241, 236, 226, 0.92); }
+}
+
+.pm[open] { animation: pmIn 0.28s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.pm[open]::backdrop { animation: pmFade 0.28s ease; }
+.pm.is-closing { animation: pmOut 0.2s ease forwards; }
+.pm.is-closing::backdrop { animation: pmFadeOut 0.2s ease forwards; }
+@keyframes pmIn      { from { opacity: 0; transform: translateY(14px) scale(0.97); } }
+@keyframes pmOut     { to   { opacity: 0; transform: translateY(8px) scale(0.98); } }
+@keyframes pmFade    { from { opacity: 0; } }
+@keyframes pmFadeOut { to   { opacity: 0; } }
+
+.pm-scroll {
+    max-height: calc(100vh - 26px);
+    max-height: calc(100dvh - 26px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--dim) transparent;
+    padding: 26px 20px 24px;
+}
+
+.pm-x {
+    position: absolute;
+    top: 10px; right: 10px;
+    z-index: 2;
+    width: 44px; height: 44px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    background: var(--bg3);
+    border: 1px solid var(--dim);
+    color: var(--white);
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.pm-x:hover { color: var(--amber); border-color: var(--amber); }
+
+.pm-eyebrow {
+    padding-right: 52px; /* não bate no botão de fechar */
+    font-family: var(--fm);
+    font-size: 0.68rem;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    color: var(--amber);
+}
+.pm-title {
+    margin: 10px 0 14px;
+    padding-right: 8px;
+    font-family: var(--fd);
+    font-weight: 400;
+    font-size: clamp(2.5rem, 11vw, 3.8rem);
+    line-height: 0.95;
+    letter-spacing: 0.5px;
+    color: var(--white);
+}
+.pm-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.25rem, 4.8vw, 1.65rem);
+    line-height: 1.3;
+    color: var(--amber);
+    max-width: 38ch;
+}
+
+.pm-cols { display: grid; gap: 26px; margin-top: 28px; }
+.pm-h {
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--dim);
+    font-family: var(--fm);
+    font-weight: 400;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    color: var(--white);
+}
+.pm-about, .pm-list {
+    font-family: var(--fb);
+    font-weight: 300;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--white);
+    opacity: 0.78;
+}
+.pm-list { list-style: none; display: grid; gap: 10px; }
+.pm-list li { position: relative; padding-left: 18px; }
+.pm-list li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0.72em;
+    width: 6px; height: 1px;
+    background: var(--amber);
+}
+
+.pm-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
+.pm-tag {
+    padding: 7px 14px;
+    border-radius: 100px;
+    border: 1px solid rgba(232, 160, 62, 0.25);
+    background: var(--amberD);
+    font-family: var(--fm);
+    font-size: 0.7rem;
+    color: var(--amber);
+}
+html[data-theme="paper"] .pm-tag { border-color: rgba(138, 89, 13, 0.3); }
+
+.pm-actions { display: flex; flex-direction: column; align-items: stretch; gap: 6px; margin-top: 30px; }
+.pm-cta { justify-content: center; min-height: 48px; }
+.pm-back {
+    align-self: center;
+    min-height: 44px;
+    padding: 0;
+    background: none;
+    border-bottom: 1px solid var(--amber);
+    font-family: var(--fm);
+    font-size: 0.76rem;
+    color: var(--white);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+.pm-back:hover { color: var(--amber); }
+
+@media (min-width: 480px) {
+    .pm-actions { flex-direction: row; align-items: center; gap: 24px; }
+    .pm-cta { min-height: 0; }
+    .pm-back { align-self: auto; min-height: 0; padding-bottom: 2px; }
+}
+@media (min-width: 720px) {
+    .pm { width: calc(100% - 48px); max-width: 660px; }
+    .pm-scroll { padding: 28px 32px 26px; }
+    .pm-x { top: 12px; right: 12px; width: 38px; height: 38px; }
+    .pm-eyebrow { padding-right: 48px; font-size: 0.64rem; }
+    .pm-title { margin: 6px 0 8px; font-size: clamp(2.2rem, 4.2vw, 2.9rem); }
+    .pm-tagline { font-size: 1.25rem; line-height: 1.28; max-width: 44ch; }
+    .pm-cols { grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 20px; }
+    .pm-h { margin-bottom: 10px; padding-bottom: 8px; font-size: 0.68rem; }
+    .pm-about, .pm-list { font-size: 0.86rem; line-height: 1.6; }
+    .pm-list { gap: 6px; }
+    .pm-list li { padding-left: 16px; }
+    .pm-tags { gap: 6px; margin-top: 20px; }
+    .pm-tag { padding: 5px 12px; font-size: 0.66rem; }
+    .pm-actions { margin-top: 22px; gap: 20px; }
+    .pm-cta { padding: 10px 22px; font-size: 0.72rem; }
+    .pm-back { font-size: 0.72rem; }
+}
