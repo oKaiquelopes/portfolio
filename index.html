@@ -147,7 +147,7 @@
         <p class="proj-note reveal">todos os projetos abaixo foram construídos em HTML, CSS e JavaScript puro — sem frameworks.</p>
 
         <div class="proj-grid">
-            <a href="https://www.bucchinoautorale.com.br/" target="_blank" rel="noopener noreferrer" class="proj-card pc-hero reveal">
+            <a href="https://www.bucchinoautorale.com.br/" data-project="bucchino" target="_blank" rel="noopener noreferrer" class="proj-card pc-hero reveal">
                 <img class="pc-img" src="css/imgs/bucchino.png" alt="" loading="lazy">
                 <div class="pc-top">
                     <span class="pc-eyebrow"><span>01</span>Site Institucional + Loja Virtual</span>
@@ -163,7 +163,7 @@
                 </div>
             </a>
 
-            <a href="https://dancadivina.com.br/" target="_blank" rel="noopener noreferrer" class="proj-card pc-wide reveal">
+            <a href="https://dancadivina.com.br/" data-project="dancadivina" target="_blank" rel="noopener noreferrer" class="proj-card pc-wide reveal">
                 <img class="pc-img" src="css/imgs/dancadivina.png" alt="" loading="lazy">
                 <div class="pc-top">
                     <span class="pc-eyebrow"><span>02</span>Landing Page Lançamento de Cursos</span>
@@ -179,7 +179,7 @@
                 </div>
             </a>
 
-            <a href="https://okaiquelopes.github.io/gustavocollins/" target="_blank" rel="noopener noreferrer" class="proj-card pc-compact reveal">
+            <a href="https://okaiquelopes.github.io/gustavocollins/" data-project="gustavocollins" target="_blank" rel="noopener noreferrer" class="proj-card pc-compact reveal">
                 <img class="pc-img" src="css/imgs/gustavocolins.png" alt="" loading="lazy">
                 <div class="pc-top">
                     <span class="pc-eyebrow"><span>03</span>Site - Portfólio</span>
@@ -195,7 +195,7 @@
                 </div>
             </a>
 
-            <a href="https://okaiquelopes.github.io/lrsonorizacao/" target="_blank" rel="noopener noreferrer" class="proj-card pc-compact reveal">
+            <a href="https://okaiquelopes.github.io/lrsonorizacao/" data-project="lrsonorizacao" target="_blank" rel="noopener noreferrer" class="proj-card pc-compact reveal">
                 <img class="pc-img" src="css/imgs/lrsom.png" alt="" loading="lazy">
                 <div class="pc-top">
                     <span class="pc-eyebrow"><span>04</span>Landing Page</span>
@@ -211,7 +211,7 @@
                 </div>
             </a>
 
-            <a href="https://knobtecnologia.com/powerpro/index.html" target="_blank" rel="noopener noreferrer" class="proj-card pc-wide reveal">
+            <a href="https://knobtecnologia.com/powerpro/index.html" data-project="powerpro" target="_blank" rel="noopener noreferrer" class="proj-card pc-wide reveal">
                 <img class="pc-img" src="css/imgs/powerpro.png" alt="" loading="lazy">
                 <div class="pc-top">
                     <span class="pc-eyebrow"><span>05</span>Landing Page</span>
@@ -227,7 +227,7 @@
                 </div>
             </a>
 
-            <a href="https://knobtecnologia.com/solar" target="_blank" rel="noopener noreferrer" class="proj-card pc-wide reveal">
+            <a href="https://knobtecnologia.com/solar" data-project="knobsolar" target="_blank" rel="noopener noreferrer" class="proj-card pc-wide reveal">
                 <img class="pc-img" src="css/imgs/knobsolar.png" alt="" loading="lazy">
                 <div class="pc-top">
                     <span class="pc-eyebrow"><span>06</span>Site Institucional</span>
@@ -630,6 +630,36 @@
             <span>Desenvolvido com ☕ & 💛.</span>
         </div>
     </footer>
+
+    <!-- ══════════════ MODAL DE PROJETO ══════════════ -->
+    <dialog class="pm" id="projModal" aria-labelledby="pmTitle" aria-describedby="pmTagline">
+        <button type="button" class="pm-x" data-pm-close aria-label="Fechar">
+            <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </button>
+        <div class="pm-scroll">
+            <p class="pm-eyebrow" id="pmEyebrow"></p>
+            <h3 class="pm-title" id="pmTitle"></h3>
+            <p class="pm-tagline" id="pmTagline"></p>
+
+            <div class="pm-cols">
+                <div class="pm-col" role="group" aria-labelledby="pmAboutH">
+                    <h4 class="pm-h" id="pmAboutH">o projeto</h4>
+                    <p class="pm-about" id="pmAbout"></p>
+                </div>
+                <div class="pm-col" role="group" aria-labelledby="pmExpH">
+                    <h4 class="pm-h" id="pmExpH">o que explorei</h4>
+                    <ul class="pm-list" id="pmList"></ul>
+                </div>
+            </div>
+
+            <ul class="pm-tags" id="pmTags" aria-label="Tecnologias usadas"></ul>
+
+            <div class="pm-actions">
+                <a class="btn-primary pm-cta" id="pmCta" target="_blank" rel="noopener noreferrer">ver projeto no ar ↗</a>
+                <button type="button" class="pm-back" data-pm-close>← voltar aos projetos</button>
+            </div>
+        </div>
+    </dialog>
 
     <!-- ══════════════ PALETA DE COMANDOS (Ctrl/⌘ + K) ══════════════ -->
     <div class="cmdk" id="cmdk" aria-hidden="true">
